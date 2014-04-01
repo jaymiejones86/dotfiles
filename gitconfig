@@ -16,3 +16,7 @@
 	trustExitCode = true
 [github]
 	user = jaymiejones86
+[alias]
+  lgg = log --graph --max-count=5
+  lg = log --stat --max-count=5
+  rh = reset HEAD
