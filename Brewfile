@@ -17,5 +17,6 @@ install gitsh
 install hub
 install mysql
 install postgresql
+install redis
 install rcm
 install terminal-notifier
