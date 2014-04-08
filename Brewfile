@@ -1,6 +1,7 @@
 update
 tap homebrew/dupes
 install apple-gcc42
+install openssl
 install node
 install ctags
 install git
@@ -20,3 +21,4 @@ install postgresql
 install redis
 install rcm
 install terminal-notifier
+install reattach-to-user-namespace
