@@ -22,3 +22,5 @@ install redis
 install rcm
 install terminal-notifier
 install reattach-to-user-namespace
+install ghostscript
+install aspell
