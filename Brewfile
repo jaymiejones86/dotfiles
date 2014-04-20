@@ -1,6 +1,8 @@
 update
 tap homebrew/dupes
+tap homebrew/versions
 install apple-gcc42
+install qt
 install openssl
 install node
 install ctags
