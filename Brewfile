@@ -2,6 +2,7 @@ update
 tap homebrew/dupes
 tap homebrew/versions
 install apple-gcc42
+install ssh-copy-id
 install qt
 install openssl
 install node
