@@ -33,6 +33,7 @@ alias rpdeploy="bundle exec cap production deploy"
 alias bundle='nocorrect bundle'
 alias ra='rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb'
 alias bower='noglob bower'
+alias vg='vagrant'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

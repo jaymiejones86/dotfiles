@@ -1,6 +1,7 @@
 update
 tap homebrew/dupes
 tap homebrew/versions
+tap thoughtbot/formulae
 install apple-gcc42
 install ssh-copy-id
 install qt
