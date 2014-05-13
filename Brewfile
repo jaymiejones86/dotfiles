@@ -12,7 +12,6 @@ install git
 install imagemagick
 install phantomjs
 install rbenv
-install ruby-build
 install ruby-install
 install tmux
 install wget
