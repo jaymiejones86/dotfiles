@@ -62,6 +62,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin
 export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=$PATH:/usr/local/bin/mysql
+export GOPATH="/Users/`whoami`/go"
 
 # Ruby Test Optimization Stuffs
 export RUBY_GC_MALLOC_LIMIT=90000000
