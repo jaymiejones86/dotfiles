@@ -34,7 +34,7 @@ alias rpdeploy="bundle exec cap production deploy"
 alias bundle='nocorrect bundle'
 alias ra='rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb'
 alias bower='noglob bower'
-alias vg='vagrant'
+# alias vg='vagrant'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin
 export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=$PATH:/usr/local/bin/mysql
-export GOPATH="/Users/`whoami`/go"
+# export GOPATH="/Users/`whoami`/go"
 
 # Ruby Test Optimization Stuffs
 export RUBY_GC_MALLOC_LIMIT=90000000
