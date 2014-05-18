@@ -23,18 +23,30 @@ alias hidedotfiles='defaults write com.apple.finder AppleShowAllFiles -bool fals
 alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
 alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf 'Public key copied to pasteboard.'"
+
+# gifs
 alias highfive="echo 'https://p.gr-assets.com/540x540/fit/hostedimages/1380393870/758402.gif' | pbcopy | printf 'Pasted highest of fives to pasteboard.'"
 alias bugsarecoming="echo 'http://www.troll.me/images/gandolf/the-bugs-are-comming-you-shall-not-pass-thumb.jpg' | pbcopy | printf 'Pasted highest of fives to pasteboard.'"
 alias featurebug="echo 'http://cdn.memegenerator.net/instances/250x250/33018175.jpg' | pbcopy | printf 'Pasted highest of fives to pasteboard.'"
 alias mindblown="echo 'http://img.photobucket.com/albums/v201/foolishtook/HIMYM/mindblown.gif' | pbcopy | printf 'Pasted mind blown to pasteboard.'"
 alias somuchwin="echo 'http://www.quickmeme.com/img/0f/0ff49113f737f6725161e579f345863f0a8b6d82d260aca7a3726c18b760b024.jpg' | pbcopy | printf 'Pasted mind blown to pasteboard.'"
+
+# Rails
 alias rmigrate="bundle exec rake db:migrate db:test:prepare"
 alias rdeploy="bundle exec cap deploy"
 alias rpdeploy="bundle exec cap production deploy"
 alias bundle='nocorrect bundle'
 alias ra='rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb'
+
 alias bower='noglob bower'
 # alias vg='vagrant'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
