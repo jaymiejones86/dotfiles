@@ -4,6 +4,8 @@ tap homebrew/versions
 tap thoughtbot/formulae
 install apple-gcc42
 install ssh-copy-id
+install mysql
+install postgresql
 install qt
 install openssl
 install node
@@ -19,9 +21,8 @@ install the_silver_searcher
 install vim --override-system-v
 install gitsh
 install hub
-install mysql
-install postgresql
 install redis
+install sphinx
 install rcm
 install terminal-notifier
 install reattach-to-user-namespace
