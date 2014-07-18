@@ -1,3 +1,0 @@
-let mapleader = ","
-set clipboard=unnamed
-set rtp+=/Users/jaymiejones/.janus/powerline/powerline/bindings/vim
