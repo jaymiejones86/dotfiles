@@ -12,14 +12,13 @@ Install [Homebrew](http://brew.sh/) by running ```ruby -e "$(curl -fsSL https://
 Run ```brew install```
 
 ### Step 4
-Install janus by running ```curl -Lo- https://bit.ly/janus-bootstrap | bash```
+Install Vundle - ```git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim```
 
 ### Step 5
 Run ```install.sh``` from the users home directory to link all dotfiles
 
-### Step 6
-Install vim plugins as of VIM-PLUGINS.md file  
-NOTE: This should change to NeoBundle or Vundle
+### Step 7
+Run ```vim +PluginInstall +qall``` to install all required vim plugins
 
 ## Linux Installation
 
