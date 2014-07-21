@@ -41,6 +41,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'tpope/vim-bundler.git'
 Plugin 'dockyard/vim-easydir'
 Plugin 'mattn/emmet-vim'
+Plugin 'vim-scripts/Rename2'
 
 " Languages
 Plugin 'kchmck/vim-coffee-script'
