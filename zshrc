@@ -11,7 +11,6 @@ ZSH_THEME="af-magic-mod"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias drush='/Users/jaymiejones/Documents/drush/drush'
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -b'
 alias c='pygmentize -O style=monokai -f console256 -g'
 alias ta='tmux attach -t'
 alias tc='tmux new -s'
@@ -66,7 +65,7 @@ DISABLE_AUTO_TITLE="true" # This also fixes an issue with tmux
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby osx brew bundler gem github heroku rails rake rvm sublime vagrant powder)
+plugins=(git ruby osx brew bundler gem github heroku rails rake rvm vagrant powder)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
