@@ -43,6 +43,7 @@ Plugin 'tpope/vim-bundler.git'
 Plugin 'dockyard/vim-easydir'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-scripts/Rename2'
+Plugin 'tpope/vim-endwise'
 
 " Languages
 Plugin 'kchmck/vim-coffee-script'
