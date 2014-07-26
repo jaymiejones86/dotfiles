@@ -62,6 +62,7 @@ Plugin 'depuracao/vim-rdoc'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'othree/html5.vim'
 
 " Colors
 Plugin 'altercation/vim-colors-solarized'
