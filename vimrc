@@ -44,6 +44,7 @@ Plugin 'dockyard/vim-easydir'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-scripts/Rename2'
 Plugin 'tpope/vim-endwise'
+Plugin 'wesQ3/vim-windowswap'
 
 " Languages
 Plugin 'kchmck/vim-coffee-script'
