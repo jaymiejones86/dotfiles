@@ -29,6 +29,7 @@ alias bugsarecoming="echo 'http://www.troll.me/images/gandolf/the-bugs-are-commi
 alias featurebug="echo 'http://cdn.memegenerator.net/instances/250x250/33018175.jpg' | pbcopy | printf 'Pasted highest of fives to pasteboard.'"
 alias mindblown="echo 'http://img.photobucket.com/albums/v201/foolishtook/HIMYM/mindblown.gif' | pbcopy | printf 'Pasted mind blown to pasteboard.'"
 alias somuchwin="echo 'http://www.quickmeme.com/img/0f/0ff49113f737f6725161e579f345863f0a8b6d82d260aca7a3726c18b760b024.jpg' | pbcopy | printf 'Pasted mind blown to pasteboard.'"
+alias userissue="echo 'http://s3-ap-southeast-1.amazonaws.com/jaymiejones86-settings/images/seeusers.gif' | pbcopy | printf 'Pasted user issue to pasteboard.'"
 
 # Rails
 alias rmigrate="bundle exec rake db:migrate db:test:prepare"
@@ -87,4 +88,13 @@ export EDITOR='vim'
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # eval "$(rbenv init -)"
 
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# RVM
+# export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export DOCKER_HOST=tcp://192.168.59.103:2375
+
+# CHRUBY
+RUBIES+=(~/.rvm/rubies/*)
+
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
