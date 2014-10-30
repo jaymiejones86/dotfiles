@@ -93,3 +93,5 @@ export DOCKER_HOST=tcp://192.168.59.103:2375
 # CHRUBY
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+
+chruby ruby-2.1.3
