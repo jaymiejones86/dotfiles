@@ -66,7 +66,7 @@ DISABLE_AUTO_TITLE="true" # This also fixes an issue with tmux
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby osx brew bundler gem github heroku rails rake rvm vagrant powder)
+plugins=(git ruby osx brew bundler gem github heroku rails rake vagrant powder)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
@@ -88,13 +88,8 @@ export EDITOR='vim'
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # eval "$(rbenv init -)"
 
-# RVM
-# export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export DOCKER_HOST=tcp://192.168.59.103:2375
 
 # CHRUBY
-RUBIES+=(~/.rvm/rubies/*)
-
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh

@@ -2,7 +2,7 @@ update
 tap homebrew/dupes
 tap homebrew/versions
 tap thoughtbot/formulae
-install apple-gcc42
+install apple-gcc48
 install ssh-copy-id
 install mysql
 install postgresql
