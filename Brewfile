@@ -28,3 +28,4 @@ install terminal-notifier
 install reattach-to-user-namespace
 install ghostscript
 install aspell
+install ansible
