@@ -32,7 +32,7 @@ alias somuchwin="echo 'http://www.quickmeme.com/img/0f/0ff49113f737f6725161e579f
 alias userissue="echo 'http://s3-ap-southeast-1.amazonaws.com/jaymiejones86-settings/images/seeusers.gif' | pbcopy | printf 'Pasted user issue to pasteboard.'"
 
 # Rails
-alias rmigrate="bundle exec rake db:migrate db:test:prepare"
+alias rmigrate="bundle exec rake db:migrate"
 alias rdeploy="bundle exec cap deploy"
 alias rpdeploy="bundle exec cap production deploy"
 alias bundle='nocorrect bundle'
