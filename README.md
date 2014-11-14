@@ -20,6 +20,9 @@ Run ```install.sh``` from the users home directory to link all dotfiles
 ### Step 7
 Run ```vim +PluginInstall +qall``` to install all required vim plugins
 
+### Step 8
+Install Lunchy gem ```gem install lunch``` to make OS X launchctl simple
+
 ## Linux Installation
 
 ### Step 1
