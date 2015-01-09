@@ -10,7 +10,7 @@ ZSH_THEME="af-magic-mod"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias drush='/Users/jaymiejones/Documents/drush/drush'
+# alias drush='/Users/jaymiejones/Documents/drush/drush'
 alias c='pygmentize -O style=monokai -f console256 -g'
 alias ta='tmux attach -t'
 alias tc='tmux new -s'
@@ -74,6 +74,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin
 export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=$PATH:/usr/local/bin/mysql
+export PATH=$PATH:$HOME/.composer
 # export GOPATH="/Users/`whoami`/go"
 
 # Ruby Test Optimization Stuffs
