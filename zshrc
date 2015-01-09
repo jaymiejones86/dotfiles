@@ -75,6 +75,7 @@ export PATH=/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/
 export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=$PATH:/usr/local/bin/mysql
 export PATH=$PATH:$HOME/.composer
+export PATH=$PATH:$HOME/.composer/vendor/drush/drush
 # export GOPATH="/Users/`whoami`/go"
 
 # Ruby Test Optimization Stuffs
