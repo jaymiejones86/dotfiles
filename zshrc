@@ -36,7 +36,7 @@ alias rmigrate="bundle exec rake db:migrate"
 alias rdeploy="bundle exec cap deploy"
 alias rpdeploy="bundle exec cap production deploy"
 alias bundle='nocorrect bundle'
-alias ra='rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb'
+
 
 alias bower='noglob bower'
 # alias vg='vagrant'
@@ -47,6 +47,11 @@ alias localip="ipconfig getifaddr en0"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# Rails Apps Composer (online)
+ra () {
+  rails new $1 -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T --no-ri --no-rdoc
+}
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
