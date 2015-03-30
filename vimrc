@@ -66,6 +66,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'othree/html5.vim'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " Colors
 Plugin 'altercation/vim-colors-solarized'
