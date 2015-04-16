@@ -7,6 +7,7 @@ let g:solarized_contrast = "high"
 set rnu
 set clipboard=unnamed
 let &colorcolumn=join(range(81,999),",")
+" colorscheme flattown
 colorscheme solarized
 set shell=/bin/sh
 " set t_Co=256
