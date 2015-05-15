@@ -4,6 +4,7 @@ tap homebrew/versions
 tap thoughtbot/formulae
 install apple-gcc48
 install ssh-copy-id
+install python
 install mysql
 install postgresql
 install qt
