@@ -48,6 +48,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'vim-scripts/Rename2'
 Plugin 'tpope/vim-endwise'
 Plugin 'wesQ3/vim-windowswap'
+Plugin 'stefanoverna/vim-i18n'
 
 " Languages
 Plugin 'kchmck/vim-coffee-script'
