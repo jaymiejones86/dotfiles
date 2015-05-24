@@ -23,6 +23,7 @@ alias hidedotfiles='defaults write com.apple.finder AppleShowAllFiles -bool fals
 alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
 alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf 'Public key copied to pasteboard.'"
+alias viminstallplugins="vim +PluginInstall +qall"
 
 # gifs
 alias highfive="echo 'https://p.gr-assets.com/540x540/fit/hostedimages/1380393870/758402.gif' | pbcopy | printf 'Pasted highest of fives to pasteboard.'"
