@@ -73,7 +73,7 @@ DISABLE_AUTO_TITLE="true" # This also fixes an issue with tmux
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby osx brew bundler gem github heroku rails rake vagrant powder docker)
+plugins=(git ruby osx brew bundler gem github heroku rails rake vagrant powder docker boot2docker)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
