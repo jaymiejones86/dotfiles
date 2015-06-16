@@ -30,4 +30,5 @@ install reattach-to-user-namespace
 install ghostscript
 install aspell
 install ansible
+install boot2docker
 install nvm
