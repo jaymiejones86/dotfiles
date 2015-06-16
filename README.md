@@ -23,6 +23,9 @@ Run ```vim +PluginInstall +qall``` to install all required vim plugins
 ### Step 8
 Install Lunchy gem ```gem install lunchy``` to make OS X launchctl simple with ```lunchy``` commands
 
+### Step 9
+Install Node requirements ```nvm install 2```
+
 ## Linux Installation
 
 ### Step 1
