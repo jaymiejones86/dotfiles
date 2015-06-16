@@ -14,7 +14,7 @@ install ctags
 install git
 install imagemagick
 install phantomjs
-install rbenv
+install chruby
 install ruby-install
 install tmux
 install wget
