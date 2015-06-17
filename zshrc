@@ -9,9 +9,9 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="minimal-path-git"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias drush='/Users/jaymiejones/Documents/drush/drush'
+ alias zshconfig="vim ~/.zshrc"
 alias c='pygmentize -O style=monokai -f console256 -g'
 alias ta='tmux attach -t'
 alias tc='tmux new -s'
