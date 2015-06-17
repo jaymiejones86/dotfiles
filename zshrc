@@ -24,21 +24,13 @@ alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
 alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf 'Public key copied to pasteboard.'"
 alias viminstallplugins="vim +PluginInstall +qall"
-
-# gifs
-alias highfive="echo 'https://p.gr-assets.com/540x540/fit/hostedimages/1380393870/758402.gif' | pbcopy | printf 'Pasted highest of fives to pasteboard.'"
-alias bugsarecoming="echo 'http://www.troll.me/images/gandolf/the-bugs-are-comming-you-shall-not-pass-thumb.jpg' | pbcopy | printf 'Pasted highest of fives to pasteboard.'"
-alias featurebug="echo 'http://cdn.memegenerator.net/instances/250x250/33018175.jpg' | pbcopy | printf 'Pasted highest of fives to pasteboard.'"
-alias mindblown="echo 'http://img.photobucket.com/albums/v201/foolishtook/HIMYM/mindblown.gif' | pbcopy | printf 'Pasted mind blown to pasteboard.'"
-alias somuchwin="echo 'http://www.quickmeme.com/img/0f/0ff49113f737f6725161e579f345863f0a8b6d82d260aca7a3726c18b760b024.jpg' | pbcopy | printf 'Pasted mind blown to pasteboard.'"
-alias userissue="echo 'http://s3-ap-southeast-1.amazonaws.com/jaymiejones86-settings/images/seeusers.gif' | pbcopy | printf 'Pasted user issue to pasteboard.'"
+alias memegifs=$HOME"/dotfiles/memegifs.sh"
 
 # Rails
 alias rmigrate="bundle exec rake db:migrate"
 alias rdeploy="bundle exec cap deploy"
 alias rpdeploy="bundle exec cap production deploy"
 alias bundle='nocorrect bundle'
-
 
 alias bower='noglob bower'
 # alias vg='vagrant'
