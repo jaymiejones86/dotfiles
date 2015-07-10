@@ -13,10 +13,16 @@ ZSH_THEME="minimal-path-git"
 # alias drush='/Users/jaymiejones/Documents/drush/drush'
  alias zshconfig="vim ~/.zshrc"
 alias c='pygmentize -O style=monokai -f console256 -g'
+
+# docker
+alias dm='docker-machine'
+
+# tmux
 alias ta='tmux attach -t'
 alias tc='tmux new -s'
 alias tmk='tmux kill-session -t'
 alias tml='tmux ls'
+
 alias tphp='tail -f /Applications/MAMP/logs/php_error.log'
 alias showdotfiles='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
 alias hidedotfiles='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
