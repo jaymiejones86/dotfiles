@@ -16,6 +16,7 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 
 # docker
 alias dm='docker-machine'
+alias compoase='docker-compose'
 
 # tmux
 alias ta='tmux attach -t'
