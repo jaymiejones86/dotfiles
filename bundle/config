@@ -1,0 +1,3 @@
+---
+BUNDLE_BUILD__LIBV8: "--with-cxx=gcc"
+BUNDLE_JOBS: '7'
