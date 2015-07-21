@@ -39,6 +39,9 @@ alias rdeploy="bundle exec cap deploy"
 alias rpdeploy="bundle exec cap production deploy"
 alias bundle='nocorrect bundle'
 
+# Ruby
+alias installruby="CC=/usr/bin/gcc ruby-install ruby"
+
 alias bower='noglob bower'
 # alias vg='vagrant'
 
