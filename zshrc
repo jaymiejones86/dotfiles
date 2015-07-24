@@ -87,6 +87,9 @@ export PATH=$PATH:$HOME/.composer
 export PATH=$PATH:$HOME/.composer/vendor/drush/drush
 # export GOPATH="/Users/`whoami`/go"
 
+# Link to phantomjs2 for karma stuffs
+export PHANTOMJS_BIN=/usr/local/Cellar/phantomjs/2.0.0/bin/phantomjs
+
 # Ruby Test Optimization Stuffs
 export RUBY_GC_MALLOC_LIMIT=90000000
 # export RUBY_FREE_MIN=200000
