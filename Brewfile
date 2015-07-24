@@ -9,7 +9,6 @@ install mysql
 install postgresql
 install qt
 install openssl
-install node
 install ctags
 install git
 install imagemagick
