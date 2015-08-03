@@ -1,3 +1,5 @@
 ---
 BUNDLE_BUILD__LIBV8: "--with-cxx=gcc"
 BUNDLE_JOBS: '7'
+BUNDLE_GEM__COC: true
+BUNDLE_GEM__TEST: rspec
