@@ -22,3 +22,5 @@
   rh = reset HEAD
 [push]
 	default = simple
+[commit]
+  template = ~/.gitmessage
