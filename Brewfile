@@ -1,6 +1,7 @@
 update
 tap homebrew/dupes
 tap homebrew/versions
+tap homebrew/services
 tap thoughtbot/formulae
 install apple-gcc48
 install ssh-copy-id
