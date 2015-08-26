@@ -111,4 +111,4 @@ export DOCKER_TLS_VERIFY=1
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-chruby ruby-2.2.2
+chruby ruby-2.2.3
