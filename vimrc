@@ -49,6 +49,7 @@ Plugin 'vim-scripts/Rename2'
 Plugin 'tpope/vim-endwise'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'stefanoverna/vim-i18n'
+Plugin 'AndrewRadev/splitjoin.vim'
 
 " Languages
 Plugin 'kchmck/vim-coffee-script'
