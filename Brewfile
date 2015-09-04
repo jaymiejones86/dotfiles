@@ -32,3 +32,4 @@ install aspell
 install ansible
 install boot2docker
 install nvm
+install httpie
