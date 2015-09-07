@@ -76,12 +76,12 @@ DISABLE_AUTO_TITLE="true" # This also fixes an issue with tmux
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby osx brew bundler gem github heroku rails rake vagrant powder)
+plugins=(git ruby osx brew bundler gem github heroku rails rake vagrant powder docker boot2docker)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
 # export PATH=$PATH:/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin
-export PATH=./bin:/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin
+export PATH=./bin:/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin
 export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=$PATH:/usr/local/bin/mysql
 export PATH=$PATH:$HOME/.composer
@@ -102,6 +102,10 @@ export EDITOR='vim'
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # eval "$(rbenv init -)"
+
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
 
 # CHRUBY
 source /usr/local/share/chruby/chruby.sh
