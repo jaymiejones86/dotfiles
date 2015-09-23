@@ -33,3 +33,7 @@ install ansible
 install boot2docker
 install nvm
 install httpie
+tap iveney/mocha
+install realpath
+install exiftool
+install poppler
