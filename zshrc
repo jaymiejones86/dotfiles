@@ -46,6 +46,9 @@ alias installruby="CC=/usr/bin/gcc ruby-install ruby"
 alias bower='noglob bower'
 # alias vg='vagrant'
 
+# Git
+alias gittoday='git log --graph --oneline --decorate --color --all --since="24 hours ago"'
+
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
