@@ -11,7 +11,7 @@ ZSH_THEME="minimal-path-git"
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias drush='/Users/jaymiejones/Documents/drush/drush'
- alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.zshrc"
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 # docker
@@ -78,7 +78,7 @@ DISABLE_AUTO_TITLE="true" # This also fixes an issue with tmux
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby osx brew bundler gem github heroku rails rake vagrant powder docker boot2docker)
+plugins=(git ruby osx brew bundler gem heroku rails rake vagrant powder docker boot2docker)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
