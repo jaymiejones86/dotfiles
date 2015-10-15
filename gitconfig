@@ -20,7 +20,7 @@
   lgg = log --graph --max-count=5
   lg = log --stat --max-count=5
   rh = reset HEAD
-  today = log --graph --oneline --decorate --color --all --since=\"24 hours ago\"
+  today = log --graph --oneline --decorate --color --all --since=\"24 hours ago\" --author="jaymiejones86@gmail.com"
 [push]
 	default = simple
 [commit]
