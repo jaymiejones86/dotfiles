@@ -33,6 +33,7 @@ install ansible
 install boot2docker
 install nvm
 install httpie
+install ack
 tap iveney/mocha
 install realpath
 install exiftool
