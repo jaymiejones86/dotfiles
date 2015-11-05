@@ -21,6 +21,7 @@
   lg = log --stat --max-count=5
   rh = reset HEAD
   today = log --graph --oneline --decorate --color --all --since=\"24 hours ago\" --author="jaymiejones86@gmail.com"
+  oops = reset --hard 'HEAD@{1}'
 [push]
 	default = simple
 [commit]
