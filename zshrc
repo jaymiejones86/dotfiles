@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="af-magic-mod"
+# ZSH_THEME="Soliah"
 ZSH_THEME="minimal-path-git"
 
 # Example aliases

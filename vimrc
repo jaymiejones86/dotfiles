@@ -50,6 +50,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'stefanoverna/vim-i18n'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'tpope/vim-obsession'
 
 " Languages
 Plugin 'kchmck/vim-coffee-script'
