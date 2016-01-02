@@ -42,6 +42,7 @@ alias rdeploy="bundle exec cap deploy"
 alias rpdeploy="bundle exec cap production deploy"
 alias bundle='nocorrect bundle'
 alias ber="bundle exec rspec spec"
+alias sroutes="bundle exec rake routes | ack $@"
 
 # Ruby
 alias installruby="CC=/usr/bin/gcc ruby-install ruby"
