@@ -33,6 +33,8 @@ install ansible
 install nvm
 install httpie
 install ack
+install gpg
+install keybase
 tap iveney/mocha
 install realpath
 install exiftool
