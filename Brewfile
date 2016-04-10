@@ -35,6 +35,7 @@ install httpie
 install ack
 install gpg
 install keybase
+install tree
 tap iveney/mocha
 install realpath
 install exiftool

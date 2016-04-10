@@ -62,6 +62,15 @@ ra () {
   rails new $1 -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T --no-ri --no-rdoc
 }
 
+# Tree options
+function _t() {
+  # Defaults to 3 levels deep, do more with `t 5` or `t 1`
+  # pass additional args after
+  local levels=${1:-3}; shift
+  tree -I '.git|node_modules|bower_components|.DS_Store' --dirsfirst -L $levels -aC $@
+}
+alias t=_t
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
