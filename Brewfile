@@ -1,5 +1,5 @@
-update
 tap homebrew/dupes
+update
 tap homebrew/versions
 tap homebrew/services
 tap thoughtbot/formulae
@@ -17,6 +17,7 @@ install phantomjs
 install chruby
 install ruby-install
 install tmux
+install tmate
 install wget
 install the_silver_searcher
 install vim --override-system-v
