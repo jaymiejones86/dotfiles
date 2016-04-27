@@ -1,6 +1,8 @@
 let mapleader = ","
 set clipboard=unnamed
 map <leader>n :NERDTreeToggle<CR>
+" undotree plugin mapping
+nnoremap <F5> :UndotreeToggle<cr>
 
 vmap <Leader>z :call I18nTranslateString()<CR>
 vmap <Leader>dt :call I18nDisplayTranslation()<CR>
