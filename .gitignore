@@ -1,2 +1,5 @@
 # OS Files
 .DS_Store
+
+# Bundler
+bundle/cache
