@@ -20,7 +20,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " General Plugins
 Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-unimpaired'
@@ -52,6 +52,7 @@ Plugin 'stefanoverna/vim-i18n'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'mbbill/undotree'
+Plugin 'Yggdroot/indentLine'
 
 " Languages
 Plugin 'kchmck/vim-coffee-script'
@@ -77,6 +78,10 @@ Plugin 'mxw/vim-jsx'
 " Colors
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'telamon/vim-color-github'
+
+" Themes
+Plugin 'mhartington/oceanic-next'
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
