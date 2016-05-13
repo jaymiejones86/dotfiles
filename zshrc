@@ -26,14 +26,20 @@ alias ta='tmux attach -t'
 alias tc='tmux new -s'
 alias tmk='tmux kill-session -t'
 alias tml='tmux ls'
+alias mux='tmuxinator'
 
+# VIM
+alias vim='nvim'
+alias viminstallplugins="vim +PluginInstall +qall"
+alias nviminstallplugins="nvim +PluginInstall +qall"
+
+# General
 alias tphp='tail -f /Applications/MAMP/logs/php_error.log'
 alias showdotfiles='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
 alias hidedotfiles='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
 alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
 alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf 'Public key copied to pasteboard.'"
-alias viminstallplugins="vim +PluginInstall +qall"
 alias memegifs=$HOME"/dotfiles/memegifs.sh"
 
 # Rails
