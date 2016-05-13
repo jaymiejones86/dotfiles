@@ -21,6 +21,7 @@ install tmate
 install wget
 install the_silver_searcher
 install vim --override-system-v
+install neovim/neovim/neovim
 install gitsh
 install hub
 install redis
