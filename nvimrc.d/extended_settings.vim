@@ -9,6 +9,12 @@ set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
+" Neovim tabs
+set nosmarttab
+set nosta
+set softtabstop=2
+set sts=2
+
 if exists("g:enable_mvim_shift_arrow")
   let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
 endif

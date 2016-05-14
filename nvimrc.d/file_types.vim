@@ -2,7 +2,7 @@
 filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
 
 if has("autocmd")
-  autocmd!
+  " autocmd!
   " In Makefiles, use real tabs, not tabs expanded to spaces
   au FileType make setlocal noexpandtab
 
