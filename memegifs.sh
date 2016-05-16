@@ -2,7 +2,7 @@
 # Bash Menu Script Example
 
 PS3='Please enter your choice: '
-options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "Quit")
+options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -52,6 +52,10 @@ do
             ;;
         "debugging")
             echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/debugging.gif' | pbcopy | printf 'Copied tried debugging to pasteboard.'
+            break
+            ;;
+        "table flip forever")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/table-flip-forever.gif' | pbcopy | printf 'Copied table flip forever to pasteboard.'
             break
             ;;
         "Quit")
