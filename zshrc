@@ -130,4 +130,4 @@ chruby ruby-2.3.1
 # NVM
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-nvm use 4.0
+nvm use 6.1
