@@ -18,7 +18,7 @@ set encoding=utf-8    " Set default encoding to UTF-8
 
 " Plugin Settings
 let g:ctrlp_custom_ignore = { 'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$', 'file': '\.exe$\|\.so$\|\.dat$' }
-let g:rspec_command = "!clear && bundle exec rspec {spec}"
+let g:rspec_command = "term clear && bundle exec rspec {spec}"
 
 " NeoMake
 autocmd! BufWritePost * Neomake
