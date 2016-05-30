@@ -38,6 +38,7 @@ install ack
 install gpg
 install keybase
 install tree
+install awsebcli
 tap iveney/mocha
 install realpath
 install exiftool
