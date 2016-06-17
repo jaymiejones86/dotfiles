@@ -14,6 +14,7 @@ set nosmarttab
 set nosta
 set softtabstop=2
 set sts=2
+set expandtab " always use soft tabs forever
 
 if exists("g:enable_mvim_shift_arrow")
   let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
