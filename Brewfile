@@ -43,3 +43,6 @@ tap iveney/mocha
 install realpath
 install exiftool
 install poppler
+install task
+install taskd
+install tasksh
