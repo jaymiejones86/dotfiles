@@ -12,7 +12,7 @@ install qt
 install openssl
 install ctags
 install git
-install imagemagick
+install imagemagick --with-little-cms --with-little-cms2
 install phantomjs
 install chruby
 install ruby-install
