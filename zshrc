@@ -29,9 +29,13 @@ alias tml='tmux ls'
 alias mux='tmuxinator'
 
 # VIM
-alias vim='nvim'
 alias viminstallplugins="vim +PluginInstall +qall"
 alias nviminstallplugins="nvim +PluginInstall +qall"
+
+# NeoVim
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
 
 # General
 alias tphp='tail -f /Applications/MAMP/logs/php_error.log'
