@@ -17,6 +17,8 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 
 # docker
 alias dm='docker-machine'
+alias dockerstopall='docker stop $(docker ps -a -q)'
+alias dockerremoveall='docker rm $(docker ps -a -q)'
 alias compose='docker-compose'
 alias dockercleanup='docker rm -v $(docker ps -a -q -f status=exited)'
 alias dockercleanuphard='docker rmi $(docker images -f "dangling=true" -q)'
