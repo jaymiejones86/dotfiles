@@ -111,6 +111,7 @@ export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=$PATH:/usr/local/bin/mysql
 export PATH=$PATH:$HOME/.composer
 # export GOPATH="/Users/`whoami`/go"
+export PATH=/Users/jaymiejones/.themekit:$PATH
 
 # Link to phantomjs2 for karma stuffs
 export PHANTOMJS_BIN=/usr/local/Cellar/phantomjs/2.0.0/bin/phantomjs
