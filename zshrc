@@ -48,6 +48,9 @@ alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf 'Public key copied to pasteboard.'"
 alias memegifs=$HOME"/dotfiles/memegifs.sh"
 
+# Tools
+alias react='create-react-app'
+
 # Rails
 alias rmigrate="bundle exec rake db:migrate"
 alias rdeploy="bundle exec cap deploy"
