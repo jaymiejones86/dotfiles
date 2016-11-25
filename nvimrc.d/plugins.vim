@@ -72,6 +72,11 @@ Plugin 'othree/html5.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mxw/vim-jsx'
 
+" Elixir
+Plugin 'c-brenn/phoenix.vim'
+Plugin 'tpope/vim-projectionist'
+Plugin 'slashmili/alchemist.vim'
+
 " Colors
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'telamon/vim-color-github'

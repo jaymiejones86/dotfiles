@@ -22,3 +22,6 @@ let g:rspec_command = ":split | term ./bin/rspec {spec}"
 
 " NeoMake
 autocmd! BufWritePost * Neomake
+
+" Alchemist Plugin
+let g:alchemist_tag_disable = 1
