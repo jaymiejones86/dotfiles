@@ -2,7 +2,7 @@
 # Bash Menu Script Example
 
 PS3='Please enter your choice: '
-options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "computer says no" "this is fine" "consuela no no" "Quit")
+options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "computer says no" "this is fine" "consuela no no" "look away" "bye" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -68,6 +68,14 @@ do
             ;;
         "consuela no no")
             echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/images/consuela-no-no.jpg' | pbcopy | printf 'Copied consuela no no to pasteboard.'
+            break
+            ;;
+        "look away")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/ahh-look-away.gif' | pbcopy | printf 'Copied look away to pasteboard.'
+            break
+            ;;
+        "bye")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/images/bye.jpg' | pbcopy | printf 'Copied bye to pasteboard.'
             break
             ;;
         "Quit")
