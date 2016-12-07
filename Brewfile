@@ -32,7 +32,7 @@ install reattach-to-user-namespace
 install ghostscript
 install aspell
 install ansible
-install nvm
+install n
 install httpie
 install ack
 install gpg
