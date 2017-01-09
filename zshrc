@@ -135,7 +135,7 @@ export EDITOR='nvim'
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-chruby ruby-2.3.1
+chruby ruby-2.4.0
 
 # NVM
 export NVM_DIR=~/.nvm
