@@ -138,6 +138,6 @@ source /usr/local/share/chruby/auto.sh
 chruby ruby-2.4.0
 
 # NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-nvm use 6.2.2
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
+# nvm use 6.2.2
