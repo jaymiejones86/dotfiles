@@ -2,7 +2,7 @@
 # Bash Menu Script Example
 
 PS3='Please enter your choice: '
-options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "computer says no" "this is fine" "consuela no no" "look away" "bye" "Quit")
+options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "computer says no" "this is fine" "consuela no no" "look away" "bye" "buddyhi5" "hi5 no" "punch self in face" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -76,6 +76,18 @@ do
             ;;
         "bye")
             echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/images/bye.jpg' | pbcopy | printf 'Copied bye to pasteboard.'
+            break
+            ;;
+        "buddyhi5")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/images/buddy-hi5.gif' | pbcopy | printf 'Copied buddy hi 5 to pasteboard.'
+            break
+            ;;
+        "hi5 no")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/images/hi5-no.gif' | pbcopy | printf 'Copied hi 5 NO to pasteboard.'
+            break
+            ;;
+        "punch self in face")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/images/punchselfinface.gif' | pbcopy | printf 'Copied punch self in face to pasteboard.'
             break
             ;;
         "Quit")
