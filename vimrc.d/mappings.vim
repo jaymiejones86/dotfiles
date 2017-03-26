@@ -3,6 +3,8 @@
 "" General Mappings (Normal, Visual, Operator-pending)
 ""
 
+:nnoremap <CR> :nohlsearch<CR>/<BS>
+
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
@@ -160,3 +162,9 @@ endif
 " After whitespace, insert the current directory into a command-line path
 cnoremap <expr> <C-P> getcmdline()[getcmdpos()-2] ==# ' ' ? expand('%:p:h') : "\<C-P>"
 
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
+" Nerdtree
+map <leader>n :NERDTreeToggle<CR>
