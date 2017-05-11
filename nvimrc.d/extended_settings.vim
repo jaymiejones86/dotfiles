@@ -63,6 +63,9 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
 
+" Scrolling
+set mouse=a
+
 ""
 "" Backup and swap files
 ""
