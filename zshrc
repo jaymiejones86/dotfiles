@@ -131,6 +131,9 @@ export EDITOR='nvim'
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # eval "$(rbenv init -)"
 
+# Non tracked dotfile
+source ~/.tinycareterminal 2> /dev/null
+
 # CHRUBY
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
