@@ -2,7 +2,7 @@
 # Bash Menu Script Example
 
 PS3='Please enter your choice: '
-options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "computer says no" "this is fine" "consuela no no" "look away" "bye" "buddyhi5" "hi5 no" "punch self in face" "Quit")
+options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "computer says no" "this is fine" "consuela no no" "look away" "bye" "buddyhi5" "hi5 no" "punch self in face" "excited cheer" "murry jump" "rick morty yes" "stewie computer yes" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -88,6 +88,22 @@ do
             ;;
         "punch self in face")
             echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/images/punchselfinface.gif' | pbcopy | printf 'Copied punch self in face to pasteboard.'
+            break
+            ;;
+        "excited cheer")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/excited-cheer.gif' | pbcopy | printf 'Copied excited cheer no to pasteboard.'
+            break
+            ;;
+        "murry jump")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/murry-jump.gif' | pbcopy | printf 'Copied murry jump no to pasteboard.'
+            break
+            ;;
+        "rick morty yes")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/rickmortyyes.jpg' | pbcopy | printf 'Copied rick morty yes no to pasteboard.'
+            break
+            ;;
+        "stewie computer yes")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/stewie-computer-yes.gif' | pbcopy | printf 'Copied stewie computer yes yes no to pasteboard.'
             break
             ;;
         "Quit")
