@@ -59,6 +59,9 @@ alias bundle='nocorrect bundle'
 alias ber="bundle exec rspec spec"
 alias sroutes="bundle exec rake routes | ack $@"
 
+# Hanami
+alias beh="bundle exec hanami"
+
 # Ruby
 alias installruby="CC=/usr/bin/gcc ruby-install ruby"
 
