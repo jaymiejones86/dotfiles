@@ -25,3 +25,6 @@ autocmd! BufWritePost * Neomake
 
 " Alchemist Plugin
 let g:alchemist_tag_disable = 1
+
+" Rubocop Config Lookup
+let g:vimrubocop_config = './rubocop.yml'
