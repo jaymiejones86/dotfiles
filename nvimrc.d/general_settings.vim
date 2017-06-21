@@ -17,7 +17,7 @@ set ruler             " Show line and column number
 set encoding=utf-8    " Set default encoding to UTF-8
 
 " Plugin Settings
-let g:ctrlp_custom_ignore = { 'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$', 'file': '\.exe$\|\.so$\|\.dat$' }
+let g:ctrlp_custom_ignore = { 'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|node_modules\|log\|tmp$', 'file': '\.exe$\|\.so$\|\.dat$' }
 let g:rspec_command = ":split | term ./bin/rspec {spec}"
 
 " NeoMake
