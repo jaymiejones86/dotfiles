@@ -72,6 +72,9 @@ Plugin 'othree/html5.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mxw/vim-jsx'
 
+" Docker
+Plugin 'ekalinin/Dockerfile.vim'
+
 " Elixir
 Plugin 'c-brenn/phoenix.vim'
 Plugin 'tpope/vim-projectionist'
