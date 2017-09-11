@@ -72,11 +72,6 @@ alias localip="ipconfig getifaddr en0"
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
-# Rails Apps Composer (online)
-ra () {
-  rails new $1 -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T --no-ri --no-rdoc
-}
-
 # Tree options
 function _t() {
   # Defaults to 3 levels deep, do more with `t 5` or `t 1`
