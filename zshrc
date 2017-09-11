@@ -121,8 +121,6 @@ export RUBY_GC_MALLOC_LIMIT=90000000
 
 export EDITOR='nvim'
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-# eval "$(rbenv init -)"
 
 # Non tracked dotfile
 source ~/.tinycareterminal 2> /dev/null
