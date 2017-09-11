@@ -81,8 +81,6 @@ function _t() {
 }
 alias t=_t
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -99,7 +97,7 @@ DISABLE_AUTO_TITLE="true" # This also fixes an issue with tmux
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby osx brew bundler gem heroku rails rake vagrant powder docker boot2docker taskwarrior yarn)
+plugins=(git ruby osx brew bundler gem heroku rails rake docker taskwarrior yarn)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
