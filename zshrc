@@ -65,9 +65,6 @@ alias beh="bundle exec hanami"
 # Ruby
 alias installruby="CC=/usr/bin/gcc ruby-install ruby"
 
-alias bower='noglob bower'
-# alias vg='vagrant'
-
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
