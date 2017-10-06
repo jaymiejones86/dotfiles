@@ -2,7 +2,7 @@
 # Bash Menu Script Example
 
 PS3='Please enter your choice: '
-options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "computer says no" "this is fine" "consuela no no" "look away" "bye" "buddyhi5" "hi5 no" "punch self in face" "excited cheer" "murry jump" "rick morty yes" "stewie computer yes" "Quit")
+options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "computer says no" "this is fine" "consuela no no" "look away" "bye" "buddyhi5" "hi5 no" "punch self in face" "excited cheer" "murry jump" "rick morty yes" "stewie computer yes" "my brother" "throw mac" "trash computer" "unbelievable chat messages" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -104,6 +104,22 @@ do
             ;;
         "stewie computer yes")
             echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/stewie-computer-yes.gif' | pbcopy | printf 'Copied stewie computer yes yes no to pasteboard.'
+            break
+            ;;
+        "my brother")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/my-brother.gif' | pbcopy | printf 'Copied my brother to pasteboard.'
+            break
+            ;;
+        "throw mac")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/throw-mac.gif' | pbcopy | printf 'Copied throw mac to pasteboard.'
+            break
+            ;;
+        "trash computer")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/trash-computer.gif' | pbcopy | printf 'Copied trash computer to pasteboard.'
+            break
+            ;;
+        "unbelievable chat messages")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/unbelievable-chat-text-no.gif' | pbcopy | printf 'Copied unbelievable chat messages to pasteboard.'
             break
             ;;
         "Quit")
