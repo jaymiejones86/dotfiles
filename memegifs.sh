@@ -2,7 +2,7 @@
 # Bash Menu Script Example
 
 PS3='Please enter your choice: '
-options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "computer says no" "this is fine" "consuela no no" "look away" "bye" "buddyhi5" "hi5 no" "punch self in face" "excited cheer" "murry jump" "rick morty yes" "stewie computer yes" "my brother" "throw mac" "trash computer" "unbelievable chat messages" "Quit")
+options=("high five" "bugs are coming" "feature bug" "mindblown" "somuchwin" "userissue" "shootself" "shoot" "dwightshrutecelebrating" "ace v dancing" "off and on again" "debugging" "table flip forever" "computer says no" "this is fine" "consuela no no" "look away" "bye" "buddyhi5" "hi5 no" "punch self in face" "excited cheer" "murry jump" "rick morty yes" "stewie computer yes" "my brother" "throw mac" "trash computer" "unbelievable chat messages" "you will be alright" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -120,6 +120,10 @@ do
             ;;
         "unbelievable chat messages")
             echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/unbelievable-chat-text-no.gif' | pbcopy | printf 'Copied unbelievable chat messages to pasteboard.'
+            break
+            ;;
+        "you will be alright")
+            echo 'http://s3-ap-southeast-1.amazonaws.com/pixelstack-dev/gifs/you-will-be-alright.gif' | pbcopy | printf 'Copied you will be alright to pasteboard.'
             break
             ;;
         "Quit")
