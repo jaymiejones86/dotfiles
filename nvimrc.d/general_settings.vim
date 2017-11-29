@@ -28,3 +28,6 @@ let g:alchemist_tag_disable = 1
 
 " Rubocop Config Lookup
 let g:vimrubocop_config = './rubocop.yml'
+
+" Elixir
+let g:mix_format_on_save = 1

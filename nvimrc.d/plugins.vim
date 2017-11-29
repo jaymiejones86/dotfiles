@@ -79,6 +79,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'c-brenn/phoenix.vim'
 Plugin 'tpope/vim-projectionist'
 Plugin 'slashmili/alchemist.vim'
+Plugin 'mhinz/vim-mix-format'
 
 " Colors
 Plugin 'altercation/vim-colors-solarized'
