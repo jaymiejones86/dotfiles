@@ -109,6 +109,9 @@ export PATH=$PATH:$HOME/.composer
 if [[ -a $HOME/code/tools/flyway/flyway ]]; then
   export PATH=$PATH:$HOME/code/tools/flyway
 fi
+if [[ -a $HOME/code/tools/ngrok/ngrok ]]; then
+  export PATH=$PATH:$HOME/code/tools/ngrok
+fi
 export PATH="$(brew --prefix php72)/bin:$PATH"
 # export GOPATH="/Users/`whoami`/go"
 export PATH=/Users/jaymiejones/.themekit:$PATH
