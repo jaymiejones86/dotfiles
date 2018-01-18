@@ -106,6 +106,9 @@ export PATH=./bin:/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgre
 export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=$PATH:/usr/local/bin/mysql
 export PATH=$PATH:$HOME/.composer
+if [[ -a $HOME/code/tools/flyway/flyway ]]; then
+  export PATH=$PATH:$HOME/code/tools/flyway
+fi
 export PATH="$(brew --prefix php72)/bin:$PATH"
 # export GOPATH="/Users/`whoami`/go"
 export PATH=/Users/jaymiejones/.themekit:$PATH
