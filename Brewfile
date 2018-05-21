@@ -47,3 +47,4 @@ install task
 install taskd
 install tasksh
 install fd
+install watchman
