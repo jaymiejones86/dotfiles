@@ -138,6 +138,9 @@ source /usr/local/share/chruby/auto.sh
 
 chruby ruby-2.4.0
 
+# Local Settings and Overrides
+[ -f ~/.localsettings ] && source ~/.localsettings
+
 # NVM
 # export NVM_DIR=~/.nvm
 # source $(brew --prefix nvm)/nvm.sh
