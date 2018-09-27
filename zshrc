@@ -49,7 +49,7 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf 'Public key copied to pas
 alias memegifs=$HOME"/dotfiles/memegifs.sh"
 
 # Tools
-alias react='create-react-app'
+alias react="npx create-react-app $@"
 
 # Rails
 alias rmigrate="bundle exec rake db:migrate"
