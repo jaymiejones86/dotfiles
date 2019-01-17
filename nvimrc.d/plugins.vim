@@ -71,6 +71,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'othree/html5.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
 
 " Docker
 Plugin 'ekalinin/Dockerfile.vim'
