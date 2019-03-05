@@ -1,4 +1,5 @@
 #!/bin/zsh
+# Forked from https://github.com/johnsyweb/bin/blob/master/upgrade-all-ruby-gems
 
 # Update for the current ruby
 ruby --version && gem update --system && gem --version
