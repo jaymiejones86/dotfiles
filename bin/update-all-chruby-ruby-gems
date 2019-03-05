@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+# Update for the current ruby
+ruby --version && gem update --system && gem --version
+
+# Update for all the versions installed via chruby
+for ruby in $(chruby | awk '$1 ~ /[0-9]/ { print $1 }'); do
+  echo "Updating ${ruby}..."
+  chruby ${ruby}
+  ruby --version && gem update --system && gem --version
+  echo "Finished updating ${ruby}"
+done
