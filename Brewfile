@@ -21,7 +21,7 @@ install tmate
 install wget
 install the_silver_searcher
 install vim --override-system-v
-install neovim/neovim/neovim
+install neovim
 install gitsh
 install hub
 install redis
@@ -48,3 +48,11 @@ install taskd
 install tasksh
 install fd
 install watchman
+install awscli
+install exiv2
+install heroku/brew/heroku
+install git-buildkite
+install mkcert
+install nginx
+install php@7.1
+install youtube-dl
