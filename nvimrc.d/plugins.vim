@@ -50,6 +50,7 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'mbbill/undotree'
 Plugin 'Yggdroot/indentLine'
+Plugin 'airblade/vim-gitgutter'
 
 " Languages
 Plugin 'kchmck/vim-coffee-script'
