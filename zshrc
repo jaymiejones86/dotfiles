@@ -161,3 +161,5 @@ source ~/.tinycareterminal 2> /dev/null
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 export KERL_BUILD_DOCS=yes
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
