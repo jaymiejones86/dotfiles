@@ -163,3 +163,6 @@ export KERL_BUILD_DOCS=yes
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Load direnv
+eval "$(direnv hook zsh)"
