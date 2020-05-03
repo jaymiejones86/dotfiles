@@ -8,6 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="af-magic-mod"
 # ZSH_THEME="Soliah"
 ZSH_THEME="minimal-path-git"
+# ZSH_THEME="avit"
 
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -97,7 +98,8 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(transfer git z ruby osx brew bundler gem heroku rails rake docker taskwarrior yarn)
+# https://github.com/zsh-users/zsh-autosuggestions
+plugins=(transfer git z ruby osx brew bundler gem heroku rails rake docker taskwarrior yarn zsh-autosuggestions)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
@@ -163,6 +165,9 @@ export KERL_BUILD_DOCS=yes
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# https://github.com/zsh-users/zsh-syntax-highlighting
+source /Users/jaymiejones/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Load direnv
 eval "$(direnv hook zsh)"
