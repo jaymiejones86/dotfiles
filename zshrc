@@ -171,3 +171,6 @@ source /Users/jaymiejones/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-
 
 # Load direnv
 eval "$(direnv hook zsh)"
+
+# Load starship prompt
+eval "$(starship init zsh)"
