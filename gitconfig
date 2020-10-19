@@ -8,6 +8,7 @@
 	email = jaymiejones86@gmail.com
 [core]
 	excludesfile = /Users/jaymiejones/.gitignore_global
+	attributesfile = /Users/jaymiejones/.gitattributes
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
