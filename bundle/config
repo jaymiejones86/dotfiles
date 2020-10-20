@@ -1,6 +1,9 @@
 ---
 BUNDLE_BUILD__LIBV8: "--with-cxx=gcc"
-BUNDLE_JOBS: '7'
-BUNDLE_GEM__COC: 'true'
-BUNDLE_GEM__TEST: rspec
+BUNDLE_JOBS: "7"
+BUNDLE_GEM__COC: "true"
+BUNDLE_GEM__TEST: "rspec"
 BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries"
+BUNDLE_BUILD__EXIV2: "--with-exiv2-dir=/usr/local/opt/exiv2"
+BUNDLE_BUILD__MYSQL2: "--with-opt-dir=/usr/local/opt/openssl@1.1"
+BUNDLE_BUILD__PUMA: "--with-cflags=-Wno-error=implicit-function-declaration"
