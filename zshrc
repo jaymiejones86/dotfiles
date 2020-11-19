@@ -1,3 +1,5 @@
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -99,7 +101,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # https://github.com/zsh-users/zsh-autosuggestions
-plugins=(transfer git z ruby osx brew bundler gem heroku rails rake docker taskwarrior yarn zsh-autosuggestions gpg-agent)
+plugins=(transfer git z ruby osx brew bundler gem heroku rails rake docker taskwarrior yarn zsh-autosuggestions gpg-agent ssh-agent)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
