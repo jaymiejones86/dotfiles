@@ -6,6 +6,7 @@
 [user]
 	name = Jaymie Jones
 	email = jaymiejones86@gmail.com
+	signingkey = 8E83E7FD
 [core]
 	excludesfile = /Users/jaymiejones/.gitignore_global
 	attributesfile = /Users/jaymiejones/.gitattributes
@@ -30,9 +31,12 @@
 	default = simple
 [commit]
   template = ~/.gitmessage
+	gpgsign = true
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
 [pull]
 	rebase = false
+[gpg]
+	program = gpg
