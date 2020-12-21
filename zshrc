@@ -62,9 +62,6 @@ alias bundle='nocorrect bundle'
 alias ber="bundle exec rspec spec"
 alias sroutes="bundle exec rake routes | ack $@"
 
-# Hanami
-alias beh="bundle exec hanami"
-
 # Ruby
 alias installruby="CC=/usr/bin/gcc ruby-install ruby"
 
@@ -101,7 +98,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # https://github.com/zsh-users/zsh-autosuggestions
-plugins=(transfer git z ruby osx brew bundler gem heroku rails rake docker taskwarrior yarn zsh-autosuggestions gpg-agent ssh-agent)
+plugins=(transfer git z ruby osx brew bundler gem heroku rails rake docker taskwarrior yarn zsh-autosuggestions gpg-agent ssh-agent hanami)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
