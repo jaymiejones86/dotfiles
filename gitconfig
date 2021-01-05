@@ -27,6 +27,7 @@
   uncommit = reset --soft HEAD^
   unstage = reset
   unchange = checkout --
+  dw = diff --word-diff
 [push]
 	default = simple
 [commit]
