@@ -133,12 +133,6 @@ export EDITOR='nvim'
 # Non tracked dotfile
 source ~/.tinycareterminal 2> /dev/null
 
-# CHRUBY
-# source /usr/local/share/chruby/chruby.sh
-# source /usr/local/share/chruby/auto.sh
-
-# chruby ruby-2.4.0
-
 # Local Settings and Overrides
 [ -f ~/.localsettings ] && source ~/.localsettings
 
