@@ -136,11 +136,6 @@ source ~/.tinycareterminal 2> /dev/null
 # Local Settings and Overrides
 [ -f ~/.localsettings ] && source ~/.localsettings
 
-# NVM
-# export NVM_DIR=~/.nvm
-# source $(brew --prefix nvm)/nvm.sh
-# nvm use 6.2.2
-
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
