@@ -91,6 +91,7 @@ Plugin 'telamon/vim-color-github'
 " Themes
 Plugin 'mhartington/oceanic-next'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
