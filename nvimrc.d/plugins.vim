@@ -52,6 +52,7 @@ Plugin 'mbbill/undotree'
 Plugin 'Yggdroot/indentLine'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rizzatti/dash.vim'
+Plugin 'tpope/vim-fugitive'
 
 " Languages
 Plugin 'kchmck/vim-coffee-script'
