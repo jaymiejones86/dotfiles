@@ -6,7 +6,7 @@
 [user]
 	name = Jaymie Jones
 	email = jaymiejones86@gmail.com
-	signingkey = 8E83E7FD
+	signingkey = 423DFEEB8E83E7FD
 [core]
 	excludesfile = /Users/jaymiejones/.gitignore_global
 	attributesfile = /Users/jaymiejones/.gitattributes
