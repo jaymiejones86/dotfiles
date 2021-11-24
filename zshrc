@@ -160,5 +160,31 @@ source /Users/jaymiejones/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-
 # Load direnv
 eval "$(direnv hook zsh)"
 
+# Mac Silicon Start
+export PATH_ARM="/opt/homebrew/bin:$PATH"
+export PATH_INTEL="/usr/local/bin:$PATH"
+
+# sets up PATH to compile against intel libraries (if a project needs to use an intel version of a language)
+# alternatively, these env vars can be placed in a `.envrc` file for use with dotenv in that project
+intel_brewpaths() {
+  PATH="$PATH_INTEL:/opt/homebrew/bin"
+  export LD_LIBRARY_PATH="/usr/local/lib"
+  export LIBRARY_PATH="/usr/local/lib"
+  export C_INCLUDE_PATH="/usr/local/include"
+  alias brew="echo 'warning!!!! - under intel_brewpaths. Run arm_brewpaths to setup PATH for arm64 libraries' && brew"
+}
+arm_brewpaths() {
+  PATH="$PATH_ARM:/usr/local/bin"
+  export LD_LIBRARY_PATH="/opt/homebrew/lib"
+  export LIBRARY_PATH="/opt/homebrew/lib"
+  export C_INCLUDE_PATH="/opt/homebrew/include"
+  unalias brew 2>/dev/null
+}
+arm_brewpaths # default to compile against native arm libraries
+
+# interact with the intel based homebrew install
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
+# Mac Silicon End
+
 # Load starship prompt
 eval "$(starship init zsh)"
