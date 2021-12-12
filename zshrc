@@ -161,29 +161,35 @@ source /Users/jaymiejones/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-
 eval "$(direnv hook zsh)"
 
 # Mac Silicon Start
-export PATH_ARM="/opt/homebrew/bin:$PATH"
-export PATH_INTEL="/usr/local/bin:$PATH"
+export PATH_ARM="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH_INTEL="/usr/local/bin:/usr/local/sbin:$PATH"
 
-# sets up PATH to compile against intel libraries (if a project needs to use an intel version of a language)
-# alternatively, these env vars can be placed in a `.envrc` file for use with dotenv in that project
+# Sets up environment variables to compile against intel libraries (if a project needs to use an intel version of a language)
+# Alternatively, these env vars can be placed in a `.envrc` file for use with dotenv in that project
 intel_brewpaths() {
   PATH="$PATH_INTEL:/opt/homebrew/bin"
   export LD_LIBRARY_PATH="/usr/local/lib"
   export LIBRARY_PATH="/usr/local/lib"
-  export C_INCLUDE_PATH="/usr/local/include"
-  alias brew="echo 'warning!!!! - under intel_brewpaths. Run arm_brewpaths to setup PATH for arm64 libraries' && brew"
+  export CPATH="/usr/local/include"
+  alias brew="echo 'ERROR: Running /opt/homebrew/bin/brew with intel environment variables present. Did you intend to run ibrew? Run arm_brewpaths to setup environment variables for native arm64 libraries'. If you really want to do this, execute /opt/homebrew/bin/brew directly."
 }
 arm_brewpaths() {
   PATH="$PATH_ARM:/usr/local/bin"
   export LD_LIBRARY_PATH="/opt/homebrew/lib"
   export LIBRARY_PATH="/opt/homebrew/lib"
-  export C_INCLUDE_PATH="/opt/homebrew/include"
+  export CPATH="/opt/homebrew/include"
   unalias brew 2>/dev/null
 }
-arm_brewpaths # default to compile against native arm libraries
+arm_brewpaths # default to compile against and use native arm libraries
+
+# make the correct mysqldump available to rake db:migrate in market
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 # interact with the intel based homebrew install
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
+
+alias switch_arm="env /usr/bin/arch -arm64 /bin/zsh"
+alias switch_intel="env /usr/bin/arch -x86_64 /bin/zsh"
 # Mac Silicon End
 
 # Load starship prompt
