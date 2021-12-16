@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. $(brew --prefix asdf)/asdf.sh
+. /usr/local/opt/asdf/asdf.sh
 
 # Update for the current ruby
 ruby --version && gem update --system && gem --version
