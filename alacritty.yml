@@ -1,6 +1,11 @@
 env:
   term: xterm-256color
 
+window:
+  decorations: 'none'
+  startup_mode: 'Maximized'
+  opacity: 0.95
+
 scrolling:
     history: 100000
 
