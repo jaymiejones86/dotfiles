@@ -1,6 +1,8 @@
 env:
   term: xterm-256color
 
+working_directory: /Users/jaymiejones/code
+
 window:
   decorations: 'none'
   startup_mode: 'Maximized'
