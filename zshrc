@@ -193,6 +193,7 @@ alias switch_intel="env /usr/bin/arch -x86_64 /bin/zsh"
 # Mac Silicon End
 
 # Bartib
+export PATH="$PATH:/Users/jaymiejones/local-apps"
 export BARTIB_FILE="/Users/jaymiejones/activities.bartib"
 
 # Load starship prompt
