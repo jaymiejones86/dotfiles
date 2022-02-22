@@ -192,5 +192,8 @@ alias switch_arm="env /usr/bin/arch -arm64 /bin/zsh"
 alias switch_intel="env /usr/bin/arch -x86_64 /bin/zsh"
 # Mac Silicon End
 
+# Bartib
+export BARTIB_FILE="/Users/jaymiejones/activities.bartib"
+
 # Load starship prompt
 eval "$(starship init zsh)"
