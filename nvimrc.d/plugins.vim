@@ -1,116 +1,100 @@
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
+" Make sure you use single quotes
 
 " Neovim Plugins
-Plugin 'neomake/neomake'
+Plug 'neomake/neomake'
 
 " General Plugins
-Plugin 'mileszs/ack.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'skalnik/vim-vroom'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'epmatsw/ag.vim'
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'bling/vim-airline'
-Plugin 'sjl/strftimedammit.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'LnL7/vim-tslime'
-Plugin 'ap/vim-css-color'
-Plugin 'tpope/vim-commentary'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'tpope/vim-bundler.git'
-Plugin 'dockyard/vim-easydir'
-Plugin 'mattn/emmet-vim'
-Plugin 'vim-scripts/Rename2'
-Plugin 'tpope/vim-endwise'
-Plugin 'wesQ3/vim-windowswap'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'tpope/vim-obsession'
-Plugin 'mbbill/undotree'
-Plugin 'Yggdroot/indentLine'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rizzatti/dash.vim'
-Plugin 'tpope/vim-fugitive'
+Plug 'mileszs/ack.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-unimpaired'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
+Plug 'thoughtbot/vim-rspec'
+Plug 'skalnik/vim-vroom'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'epmatsw/ag.vim'
+Plug 'vim-scripts/ctags.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+Plug 'bling/vim-airline'
+Plug 'sjl/strftimedammit.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'LnL7/vim-tslime'
+Plug 'ap/vim-css-color'
+Plug 'tpope/vim-commentary'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'tpope/vim-bundler.git'
+Plug 'dockyard/vim-easydir'
+Plug 'mattn/emmet-vim'
+Plug 'vim-scripts/Rename2'
+Plug 'tpope/vim-endwise'
+Plug 'wesQ3/vim-windowswap'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'tpope/vim-obsession'
+Plug 'mbbill/undotree'
+Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
+Plug 'rizzatti/dash.vim'
+Plug 'tpope/vim-fugitive'
 
 " Telescope
-Plugin 'nvim-lua/plenary.nvim'
-Plugin 'nvim-telescope/telescope.nvim'
-Plugin 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plugin 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 
 " Languages
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-git'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'tpope/vim-haml'
-Plugin 'pangloss/vim-javascript'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-liquid'
-Plugin 'tpope/vim-markdown'
-Plugin 'sunaku/vim-ruby-minitest'
-Plugin 'mmalecki/vim-node.js'
-Plugin 'tpope/vim-rails'
-Plugin 'depuracao/vim-rdoc'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'othree/html5.vim'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'mxw/vim-jsx'
-Plugin 'leafgarland/typescript-vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-git'
+Plug 'jnwhiteh/vim-golang'
+Plug 'tpope/vim-haml'
+Plug 'pangloss/vim-javascript'
+Plug 'groenewege/vim-less'
+Plug 'tpope/vim-liquid'
+Plug 'tpope/vim-markdown'
+Plug 'sunaku/vim-ruby-minitest'
+Plug 'mmalecki/vim-node.js'
+Plug 'tpope/vim-rails'
+Plug 'depuracao/vim-rdoc'
+Plug 'vim-ruby/vim-ruby'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'othree/html5.vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
 
 " Docker
-Plugin 'ekalinin/Dockerfile.vim'
+Plug 'ekalinin/Dockerfile.vim'
 
 " Elixir
-Plugin 'c-brenn/phoenix.vim'
-Plugin 'tpope/vim-projectionist'
-Plugin 'slashmili/alchemist.vim'
-Plugin 'mhinz/vim-mix-format'
+Plug 'c-brenn/phoenix.vim'
+Plug 'tpope/vim-projectionist'
+Plug 'slashmili/alchemist.vim'
+Plug 'mhinz/vim-mix-format'
 
 " Colors
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'telamon/vim-color-github'
+Plug 'altercation/vim-colors-solarized'
+Plug 'telamon/vim-color-github'
 
 " Themes
-Plugin 'mhartington/oceanic-next'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'dracula/vim', { 'name': 'dracula' }
+Plug 'mhartington/oceanic-next'
+Plug 'ryanoasis/vim-devicons'
+Plug 'dracula/vim', { 'name': 'dracula' }
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Initialize plugin system
+call plug#end()
