@@ -54,6 +54,12 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'rizzatti/dash.vim'
 Plugin 'tpope/vim-fugitive'
 
+" Telescope
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'nvim-telescope/telescope.nvim'
+Plugin 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plugin 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+
 " Languages
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-cucumber'

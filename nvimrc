@@ -10,3 +10,8 @@ source ~/dotfiles/nvimrc.d/syntax_settings.vim
 source ~/dotfiles/nvimrc.d/devicons.vim
 source ~/dotfiles/nvimrc.d/airline.vim
 source ~/dotfiles/nvimrc.d/review.vim
+
+lua <<EOF
+ -- Need to switch to vim plug to allow installing extensions better
+ -- require('telescope').load_extension('fzf')
+EOF
