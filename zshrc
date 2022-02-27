@@ -34,8 +34,8 @@ alias tml='tmux ls'
 alias mux='tmuxinator'
 
 # VIM
-alias viminstallplugins="vim +PluginInstall +qall"
-alias nviminstallplugins="nvim +PluginInstall +qall"
+alias viminstallplugins="vim +PlugInstall +qall"
+alias nviminstallplugins="nvim +PlugInstall +qall"
 
 # NeoVim
 if type nvim > /dev/null 2>&1; then
