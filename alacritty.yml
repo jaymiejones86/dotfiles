@@ -7,6 +7,9 @@ window:
   decorations: 'none'
   startup_mode: 'Maximized'
   opacity: 0.95
+  padding:
+    x: 8
+    y: 4
 
 scrolling:
     history: 100000
