@@ -10,6 +10,7 @@ source ~/dotfiles/nvimrc.d/syntax_settings.vim
 source ~/dotfiles/nvimrc.d/devicons.vim
 source ~/dotfiles/nvimrc.d/airline.vim
 source ~/dotfiles/nvimrc.d/review.vim
+source ~/dotfiles/nvimrc.d/db_ui_settings.vim
 
 lua <<EOF
   require('telescope').setup {

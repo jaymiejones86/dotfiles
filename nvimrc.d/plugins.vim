@@ -96,5 +96,9 @@ Plug 'mhartington/oceanic-next'
 Plug 'ryanoasis/vim-devicons'
 Plug 'dracula/vim', { 'name': 'dracula' }
 
+" Database
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+
 " Initialize plugin system
 call plug#end()
