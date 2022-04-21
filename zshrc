@@ -197,5 +197,8 @@ export PATH="$PATH:/Users/jaymiejones/local-apps"
 export BARTIB_FILE="/Users/jaymiejones/activities.bartib"
 alias tasks="bartib"
 
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Load starship prompt
 eval "$(starship init zsh)"
