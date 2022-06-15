@@ -146,8 +146,6 @@ source ~/.tinycareterminal 2> /dev/null
 # asdf configuration
 . /usr/local/opt/asdf/asdf.sh
 
-. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 export KERL_BUILD_DOCS=yes
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
