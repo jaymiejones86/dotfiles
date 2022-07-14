@@ -41,3 +41,5 @@
 	rebase = false
 [gpg]
 	program = gpg
+[diff]
+	external = difft
