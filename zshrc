@@ -147,9 +147,6 @@ source ~/.tinycareterminal 2> /dev/null
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
-# asdf configuration
-. /usr/local/opt/asdf/asdf.sh
-
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 export KERL_BUILD_DOCS=yes
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
@@ -204,6 +201,9 @@ alias tasks="bartib"
 
 # Load starship prompt
 eval "$(starship init zsh)"
+
+# asdf configuration
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
