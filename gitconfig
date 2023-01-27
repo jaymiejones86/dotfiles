@@ -34,12 +34,18 @@
   template = ~/.gitmessage
 	gpgsign = true
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [pull]
 	rebase = false
 [gpg]
 	program = gpg
 [diff]
 	external = difft
+[protocol]
+	version = 2
+
+[include]
+  path = /Users/jaymiejones/.local/.gitconfig-local
