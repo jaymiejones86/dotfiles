@@ -41,9 +41,10 @@ alias viminstallplugins="vim +PlugInstall +qall"
 alias nviminstallplugins="nvim +PlugInstall +qall"
 
 # NeoVim
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
-fi
+# if type nvim > /dev/null 2>&1; then
+  # alias vim='nvim'
+# fi
+alias vim='nvim'
 
 # General
 alias tphp='tail -f /Applications/MAMP/logs/php_error.log'
