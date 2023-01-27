@@ -193,7 +193,7 @@ alias switch_intel="env /usr/bin/arch -x86_64 /bin/zsh"
 
 # Bartib
 export PATH="$PATH:/Users/jaymiejones/local-apps"
-export BARTIB_FILE="/Users/jaymiejones/activities.bartib"
+export BARTIB_FILE="/Users/jaymiejones/Dropbox/Apps/bartib/activities.bartib"
 alias tasks="bartib"
 
 # FZF
