@@ -106,7 +106,7 @@ plugins=(transfer git z ruby macos brew bundler gem heroku rails rake docker yar
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
 # export PATH=$PATH:/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin
-export PATH=./bin:/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin
+export PATH=$PATH:./bin:/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin
 export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=$PATH:/usr/local/bin/mysql
 export PATH=$PATH:$HOME/.composer
