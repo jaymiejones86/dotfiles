@@ -116,7 +116,8 @@ fi
 if [[ -a $HOME/code/tools/ngrok/ngrok ]]; then
   export PATH=$PATH:$HOME/code/tools/ngrok
 fi
-export PATH="$(brew --prefix php@7.2)/bin:$PATH"
+# Uncomment below when php is installed
+# export PATH="$(brew --prefix php@7.2)/bin:$PATH"
 # export GOPATH="/Users/`whoami`/go"
 export PATH=/Users/jaymiejones/.themekit:$PATH
 
