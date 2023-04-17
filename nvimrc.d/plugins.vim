@@ -77,6 +77,7 @@ Plug 'othree/html5.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
+Plug 'prisma/vim-prisma'
 
 " Docker
 Plug 'ekalinin/Dockerfile.vim'
