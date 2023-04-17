@@ -12,8 +12,9 @@ brew install --cask font-hack-nerd-font
 
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/nvim/bundle
+ln -s ~/dotfiles/nvim/lua ~/.config/nvim/lua
+ln -s ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
 ln -s ~/dotfiles/bundle ~/.bundle
-ln -s ~/dotfiles/nvimrc ~/.config/nvim/init.vim
 ln -s ~/dotfiles/alacritty.yml ~/.alacritty.yml
 ln -s ~/dotfiles/fzf.zsh ~/.fzf.zsh
 ln -s ~/dotfiles/gemrc ~/.gemrc
@@ -30,10 +31,11 @@ ln -s ~/dotfiles/zshenv ~/.zshenv
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/gnupg ~/.gnupg
 
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# No longer need Plug at this point as kickstart.nvim handles this
+# sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       # https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-nvim +PlugInstall
+# nvim +PlugInstall
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
