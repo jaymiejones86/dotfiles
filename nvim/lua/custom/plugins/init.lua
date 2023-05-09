@@ -12,5 +12,6 @@ return {
   "ap/vim-css-color",
   "mattn/emmet-vim",
   "tpope/vim-obsession",
+  "wuelnerdotexe/vim-astro",
 }
 
