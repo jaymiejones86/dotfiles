@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # Path to your oh-my-zsh configuration.
@@ -205,6 +203,3 @@ eval "$(starship init zsh)"
 
 # asdf configuration
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
