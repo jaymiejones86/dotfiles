@@ -49,3 +49,5 @@
 
 [include]
   path = /Users/jaymiejones/.local/.gitconfig-local
+[merge]
+	conflictstyle = diff3
