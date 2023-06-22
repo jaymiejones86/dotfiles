@@ -76,6 +76,9 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- Editor Config
+  'editorconfig/editorconfig-vim',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   { -- LSP Configuration & Plugins
@@ -217,6 +220,11 @@ vim.o.shortmess = "I"
 
 -- Make line numbers default
 vim.wo.number = true
+
+-- Spacing and Tabs
+-- Disabled due to tpope/sleuth which uses EditorConfig settings
+-- vim.o.tabstop = 2
+-- vim.o.shiftwidth = 2
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
