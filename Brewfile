@@ -35,3 +35,4 @@ install direnv
 install bat
 install dnsmasq
 install pinentry-mac
+install exa
