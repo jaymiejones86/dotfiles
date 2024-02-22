@@ -207,3 +207,4 @@ eval "$(starship init zsh)"
 
 # asdf configuration
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+[[ ! $(command -v nix) && -e "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh" ]] && source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
