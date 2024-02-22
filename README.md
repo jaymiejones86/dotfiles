@@ -1,5 +1,9 @@
 # Setup
 
+## Notes
+- Need to migrate to stow
+- Update install script to account for stow and autoconfiguration
+
 ## Mac Installation
 
 ### Step 1
