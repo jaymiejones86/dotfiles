@@ -52,3 +52,5 @@
   path = /Users/jaymiejones/.local/.gitconfig-local
 [merge]
 	conflictstyle = diff3
+[trace2]
+	eventTarget = af_unix:dgram:/tmp/olly-git-trace2.sock
