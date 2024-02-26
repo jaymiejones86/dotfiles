@@ -125,9 +125,19 @@ require('lazy').setup({
   --     vim.cmd.colorscheme 'onedark'
   --   end,
   -- },
+  --
+  { -- https://github.com/oxfist/night-owl.nvim
+    'oxfist/night-owl.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'night-owl'
+    end,
+  },
 
   { -- https://github.com/catppuccin/nvim
     'catppuccin/nvim',
+    lazy = false,
     priority = 1000,
     config = function()
       vim.cmd.colorscheme 'catppuccin'
