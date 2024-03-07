@@ -4,6 +4,15 @@
 - Need to migrate to stow
 - Update install script to account for stow and autoconfiguration
 
+## Elixir Setup notes (M1+ mac/arm)
+export KERL_BUILD_DOCS="yes"
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf install erlang latest
+asdf global erlang latest
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf install elixir latest
+asdf global elixir latest
+
 ## Mac Installation
 
 ### Step 1
