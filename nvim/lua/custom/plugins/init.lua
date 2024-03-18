@@ -13,5 +13,6 @@ return {
   "mattn/emmet-vim",
   "tpope/vim-obsession",
   "wuelnerdotexe/vim-astro",
+  "mg979/vim-visual-multi",
 }
 
