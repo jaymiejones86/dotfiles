@@ -40,6 +40,7 @@ history = 100000
 decorations = "none"
 opacity = 0.95
 startup_mode = "Maximized"
+# startup_mode = "SimpleFullscreen"
 
 [window.padding]
 x = 8
