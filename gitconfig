@@ -6,7 +6,7 @@
 [user]
 	name = Jaymie Jones
 	email = jaymiejones86@gmail.com
-	signingkey = 423DFEEB8E83E7FD
+	signingKey = /Users/jaymiejones/.ssh/id_rsa.pub
 [core]
 	excludesfile = /Users/jaymiejones/.gitignore_global
 	attributesfile = /Users/jaymiejones/.gitattributes
@@ -42,6 +42,7 @@
 	rebase = false
 [gpg]
 	program = gpg
+	format = ssh
 [diff]
 	external = difft
 	colorMoved = dimmed-zebra
