@@ -1,8 +1,8 @@
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Run brewfile (To be updated)
+brew install
 
-brew install zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -30,6 +30,18 @@ ln -s ~/dotfiles/zlogin ~/.zlogin
 ln -s ~/dotfiles/zshenv ~/.zshenv
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/gnupg ~/.gnupg
+ln -s ~/dotfiles/default-gems ~/.default-gems
+take ~/.localsettings
+
+# Install ASDF Plugins
+
+asdf plugin-add pnpm
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig"
+asdf plugin-add postgres
 
 # No longer need Plug at this point as kickstart.nvim handles this
 # sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
