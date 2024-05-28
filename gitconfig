@@ -10,9 +10,16 @@
 [core]
 	excludesfile = /Users/jaymiejones/.gitignore_global
 	attributesfile = /Users/jaymiejones/.gitattributes
+	pager = delta
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -44,8 +51,7 @@
 	program = gpg
 	format = ssh
 [diff]
-	external = difft
-	colorMoved = dimmed-zebra
+	colorMoved = default
 [protocol]
 	version = 2
 
