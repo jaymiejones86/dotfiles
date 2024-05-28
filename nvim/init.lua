@@ -214,7 +214,6 @@ vim.o.hlsearch = true
 
 -- Set encoding
 vim.o.encoding = 'utf8'
-vim.o.termencoding = 'utf-8'
 
 -- Don't show vim message
 vim.o.shortmess = "I"
