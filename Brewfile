@@ -51,3 +51,4 @@ install ossp-uuid
 install icu4c
 install pkg-config
 install --cask shortcat
+install --cask nikitabobko/tap/aerospace

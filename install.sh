@@ -31,6 +31,7 @@ ln -s ~/dotfiles/zshenv ~/.zshenv
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/gnupg ~/.gnupg
 ln -s ~/dotfiles/default-gems ~/.default-gems
+ln -s ~/dotfiles/aerospace.toml ~/.aerospace.toml
 take ~/.localsettings
 
 # Install ASDF Plugins
