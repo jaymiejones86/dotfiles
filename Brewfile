@@ -3,6 +3,7 @@ tap homebrew/services
 tap thoughtbot/formulae
 tap iveney/mocha
 install git
+install alacritty
 install tmux
 install wget
 install vim
