@@ -1,5 +1,6 @@
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+
 # Run brewfile (To be updated)
 brew install
 
@@ -33,6 +34,10 @@ ln -s ~/dotfiles/gnupg ~/.gnupg
 ln -s ~/dotfiles/default-gems ~/.default-gems
 ln -s ~/dotfiles/aerospace.toml ~/.aerospace.toml
 take ~/.localsettings
+
+# Setup SSH Git Signing
+touch ~/.ssh/allowed_signers
+echo "$(git config --get user.email) namespaces=\"git\" $(cat ~/.ssh/id_rsa.pub)" >> ~/.ssh/allowed_signers
 
 # Install ASDF Plugins
 

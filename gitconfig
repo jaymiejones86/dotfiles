@@ -6,7 +6,7 @@
 [user]
 	name = Jaymie Jones
 	email = jaymiejones86@gmail.com
-	signingKey = /Users/jaymiejones/.ssh/id_rsa.pub
+	signingkey = /Users/jaymiejones/.ssh/id_rsa.pub
 [core]
 	excludesfile = /Users/jaymiejones/.gitignore_global
 	attributesfile = /Users/jaymiejones/.gitattributes
@@ -39,7 +39,7 @@
 	default = simple
 [commit]
   template = ~/.gitmessage
-	gpgsign = true
+  gpgsign = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -61,3 +61,5 @@
 	conflictstyle = diff3
 [trace2]
 	eventTarget = af_unix:dgram:/tmp/olly-git-trace2.sock
+[gpg "ssh"]
+	allowedSignersFile = /Users/jaymiejones/.ssh/allowed_signers
