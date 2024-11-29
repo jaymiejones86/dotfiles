@@ -1,3 +1,4 @@
+[general]
 working_directory = "/Users/jaymiejones/code"
 
 [colors.bright]
@@ -14,7 +15,7 @@ yellow = "#f4f99d"
 black = "#000000"
 blue = "#caa9fa"
 cyan = "#8be9fd"
-green = "#50fa7b"
+green = "#51fa7b"
 magenta = "#ff79c6"
 red = "#ff5555"
 white = "#bfbfbf"
