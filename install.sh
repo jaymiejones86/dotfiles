@@ -33,6 +33,7 @@ ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/gnupg ~/.gnupg
 ln -s ~/dotfiles/default-gems ~/.default-gems
 ln -s ~/dotfiles/aerospace.toml ~/.aerospace.toml
+ln -s ~/dotfiles/ghostty ~/.config/
 take ~/.localsettings
 
 # Setup SSH Git Signing
