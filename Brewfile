@@ -2,6 +2,7 @@ brew update
 tap homebrew/services
 tap thoughtbot/formulae
 tap iveney/mocha
+install --cask ghostty
 install git
 install alacritty
 install tmux
