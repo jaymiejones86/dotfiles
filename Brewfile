@@ -22,7 +22,7 @@ install starship
 install direnv
 install bat
 install dnsmasq
-install exa
+install eza
 install asdf
 install caddy
 install btop

@@ -196,8 +196,8 @@ export BARTIB_FILE="/Users/jaymiejones/Dropbox/Apps/bartib/activities.bartib"
 alias tasks="bartib"
 
 # LS Overrides
-alias ll='exa --oneline --long --header --modified --created --git'
-alias llt='exa --oneline --long --header --modified --created --git --tree --level=2'
+alias ll='eza --oneline --long --header --modified --created --git'
+alias llt='eza --oneline --long --header --modified --created --git --tree --level=2'
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
