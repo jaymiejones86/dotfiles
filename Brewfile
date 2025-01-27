@@ -51,5 +51,6 @@ install curl
 install ossp-uuid
 install icu4c
 install pkg-config
+install blackhole-16ch
 install --cask shortcat
 install --cask nikitabobko/tap/aerospace
