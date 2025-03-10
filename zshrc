@@ -209,5 +209,6 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # asdf configuration
-. /opt/homebrew/opt/asdf/etc/bash_completion.d/asdf 
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 [[ ! $(command -v nix) && -e "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh" ]] && source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
