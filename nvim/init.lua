@@ -154,6 +154,16 @@ require('lazy').setup({
         component_separators = '|',
         section_separators = '',
       },
+      sections = {
+        lualine_c = {
+          {
+            'filename',
+            path = 1, -- 1 for relative path, 2 for absolute path, 3 for absolute path with ~
+            file_status = true,
+            show_modified_status = true,
+          }
+        },
+      },
     },
   },
 
