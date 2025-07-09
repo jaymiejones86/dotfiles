@@ -202,6 +202,9 @@ alias llt='eza --oneline --long --header --modified --created --git --tree --lev
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Load custom scripts
+export PATH="$HOME/dotfiles/scripts:$PATH"
+
 # Load starship prompt
 eval "$(starship init zsh)"
 
