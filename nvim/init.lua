@@ -566,6 +566,13 @@ vim.keymap.set('n', '<leader>s', ":call RunNearestSpec()<CR>", { desc = '[s] RSp
 vim.keymap.set('n', '<leader>l', ":call RunLastSpec()<CR>", { desc = '[l] RSpec run last spec' })
 vim.keymap.set('n', '<leader>t', ":call RunAllSpecs()<CR>", { desc = '[t] RSpec run all specs' })
 
+-- Custom commands
+vim.api.nvim_create_user_command('CopyFilePath', function()
+  local filepath = vim.fn.expand('%:p')
+  vim.fn.setreg('+', filepath)
+  vim.notify('Copied file path to clipboard:\n' .. filepath, vim.log.levels.INFO)
+end, { desc = 'Copy current file path to clipboard' })
+
 -- Ruby config for the LSP
 require('lspconfig').solargraph.setup {
   cmd = { "solargraph", "stdio" }
