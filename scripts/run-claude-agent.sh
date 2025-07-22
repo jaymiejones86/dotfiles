@@ -27,10 +27,10 @@ echo "🌿 Creating branch: $BRANCH_NAME"
 echo "📁 Worktree location: $WORKTREE_PATH"
 
 # Create new branch from current HEAD
-git switch -c "$BRANCH_NAME"
+mkdir -p "$WORKTREE_PATH"
 
 # Create worktree
-git worktree add "$WORKTREE_PATH" "$BRANCH_NAME"
+git worktree add -b "$BRANCH_NAME" "$WORKTREE_PATH"
 
 # Navigate to worktree
 cd "$WORKTREE_PATH"
@@ -38,7 +38,7 @@ cd "$WORKTREE_PATH"
 # === CLAUDE EXECUTION ===
 
 echo "🚀 Running Claude Code in isolated workspace..."
-CLAUDE_CMD="claude-code run $*"
+CLAUDE_CMD="otter claude-code $*"
 eval "$CLAUDE_CMD"
 
 echo "✅ Claude Code completed in: $WORKTREE_PATH"
