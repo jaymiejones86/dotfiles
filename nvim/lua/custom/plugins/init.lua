@@ -15,5 +15,6 @@ return {
   "wuelnerdotexe/vim-astro",
   "mg979/vim-visual-multi",
   "kdheepak/lazygit.nvim",
+  "mbbill/undotree",
 }
 
