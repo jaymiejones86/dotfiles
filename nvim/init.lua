@@ -97,6 +97,14 @@ require('lazy').setup({
     },
   },
 
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp"
+  },
+
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
@@ -492,15 +500,15 @@ mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
 }
 
-mason_lspconfig.setup_handlers {
-  function(server_name)
-    require('lspconfig')[server_name].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = servers[server_name],
-    }
-  end,
-}
+-- mason_lspconfig.setup_handlers {
+--   function(server_name)
+--     require('lspconfig')[server_name].setup {
+--       capabilities = capabilities,
+--       on_attach = on_attach,
+--       settings = servers[server_name],
+--     }
+--   end,
+-- }
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
