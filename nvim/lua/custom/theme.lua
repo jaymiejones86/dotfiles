@@ -10,7 +10,10 @@
 -- Option 2: Catppuccin Theme (currently active)
 vim.cmd.colorscheme 'catppuccin'
 
--- Option 3: OneDark Theme (now available via custom plugins)
+-- Option 3: Dracula Theme
+-- vim.cmd.colorscheme 'dracula'
+
+-- Option 4: OneDark Theme (now available via custom plugins)
 -- vim.cmd.colorscheme 'onedark'
 
 -- Custom Lualine Theme Configuration
@@ -31,6 +34,10 @@ end, { desc = 'Switch to Night Owl theme' })
 vim.api.nvim_create_user_command('ThemeCatppuccin', function()
   set_theme('catppuccin')
 end, { desc = 'Switch to Catppuccin theme' })
+
+vim.api.nvim_create_user_command('ThemeDracula', function()
+  set_theme('dracula')
+end, { desc = 'Switch to Dracula theme' })
 
 vim.api.nvim_create_user_command('ThemeOneDark', function()
   set_theme('onedark')

@@ -41,11 +41,16 @@ return {
     lazy = false,
     priority = 1100,
   },
+  {
+    "Mofiqul/dracula.nvim",
+    lazy = false,
+    priority = 1075,
+  },
   
   -- Markdown Support
   {
     "OXY2DEV/markview.nvim",
-    lazy = false, -- Recommended
+    event = "VeryLazy", -- Load after startup is complete
     dependencies = {
       "nvim-tree/nvim-web-devicons"
     }
