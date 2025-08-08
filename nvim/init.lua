@@ -70,14 +70,8 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- Files
-  'dockyard/vim-easydir',
-
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-
-  -- Editor Config
-  'editorconfig/editorconfig-vim',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -126,30 +120,9 @@ require('lazy').setup({
     },
   },
 
-  -- { -- Theme inspired by Atom
-  --   'navarasu/onedark.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'onedark'
-  --   end,
-  -- },
-  --
-  { -- https://github.com/oxfist/night-owl.nvim
-    'oxfist/night-owl.nvim',
-    lazy = false,
+  { -- Theme inspired by Atom
+    'navarasu/onedark.nvim',
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'night-owl'
-    end,
-  },
-
-  { -- https://github.com/catppuccin/nvim
-    'catppuccin/nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'catppuccin'
-    end,
   },
 
   { -- Set lualine as statusline
@@ -158,7 +131,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'auto',
         component_separators = '|',
         section_separators = '',
       },
@@ -207,16 +180,6 @@ require('lazy').setup({
     end,
   },
 
-  {
-    "OXY2DEV/markview.nvim",
-    lazy = false,      -- Recommended
-    -- ft = "markdown" -- If you decide to lazy-load anyway
-
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "nvim-tree/nvim-web-devicons"
-    }
-  },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -240,14 +203,6 @@ require('lazy').setup({
 
 -- Set highlight on search
 vim.o.hlsearch = true
-
--- Set encoding
-vim.o.encoding = 'utf8'
-
--- Don't show vim message
-vim.o.shortmess = "I"
-
--- let g:vimrubocop_config = './rubocop.yml'
 
 -- Make line numbers default
 vim.wo.number = true
@@ -288,9 +243,6 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
-
--- Relative number
-vim.wo.relativenumber = true
 
 -- [[ Basic Keymaps ]]
 
@@ -350,6 +302,8 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
+  -- Base languages: c, cpp, go, lua, python, rust, tsx, typescript, vimdoc, vim
+  -- Custom languages: ruby, javascript, css
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'ruby', 'javascript', 'css' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -555,38 +509,13 @@ cmp.setup {
   },
 }
 
--- Custom keymaps
-vim.api.nvim_set_keymap('n', '<leader>n', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>ew', ":e <C-R>=expand('%:h').'/'<cr>", { desc = '[ew] edit new file from current buffer directory' })
-vim.keymap.set('n', '<leader>es', ":sp <C-R>=expand('%:h').'/'<cr>", { desc = '[ew] edit new file as horizontal split from current buffer directory' })
-vim.keymap.set('n', '<leader>ev', ":vsp <C-R>=expand('%:h').'/'<cr>", { desc = '[ew] edit new file as vertical split from current buffer directory' })
-vim.keymap.set('n', '<leader>et', ":tabe <C-R>=expand('%:h').'/'<cr>", { desc = '[ew] edit new file in a tab from current buffer directory' })
 
--- Disable highlight search when using enter key
-vim.keymap.set('n', '<CR>', ":nohlsearch<CR>/<BS>", { desc = '[CR] turn off highlight search' })
-
--- zoom a vim pane, <C-w>= to re-balance
-vim.keymap.set('n', '<leader>=', ":wincmd =<cr>", { desc = '[=] balance vim pane' })
-
--- vim-rspec settings
-vim.keymap.set('n', '<leader>t', ":call RunCurrentSpecFile()<CR>", { desc = '[t] RSpec run current spec file' })
-vim.keymap.set('n', '<leader>s', ":call RunNearestSpec()<CR>", { desc = '[s] RSpec run nearest spec' })
-vim.keymap.set('n', '<leader>l', ":call RunLastSpec()<CR>", { desc = '[l] RSpec run last spec' })
-vim.keymap.set('n', '<leader>t', ":call RunAllSpecs()<CR>", { desc = '[t] RSpec run all specs' })
-
--- Custom commands
-vim.api.nvim_create_user_command('CopyFilePath', function()
-  local filepath = vim.fn.expand('%:p')
-  vim.fn.setreg('+', filepath)
-  vim.notify('Copied file path to clipboard:\n' .. filepath, vim.log.levels.INFO)
-end, { desc = 'Copy current file path to clipboard' })
-
--- Ruby config for the LSP
-require('lspconfig').solargraph.setup {
-  cmd = { "solargraph", "stdio" }
-}
-
--- let g:vimrubocop_config = './rubocop.yml'
+-- Load custom configurations
+-- These modules contain user-specific customizations separated from the base config
+require('custom.options')  -- Custom vim options and settings
+require('custom.keymaps')  -- Custom keymaps and commands
+require('custom.lsp')      -- Custom LSP configurations
+require('custom.theme')    -- Theme and colorscheme setup
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
