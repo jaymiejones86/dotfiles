@@ -46,6 +46,16 @@ return {
     lazy = false,
     priority = 1075,
   },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1120
+  },
   
   -- Markdown Support
   {

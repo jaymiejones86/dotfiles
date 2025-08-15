@@ -8,7 +8,7 @@
 -- vim.cmd.colorscheme 'night-owl'
 
 -- Option 2: Catppuccin Theme (currently active)
-vim.cmd.colorscheme 'catppuccin'
+vim.cmd.colorscheme 'tokyonight'
 
 -- Option 3: Dracula Theme
 -- vim.cmd.colorscheme 'dracula'
@@ -42,3 +42,11 @@ end, { desc = 'Switch to Dracula theme' })
 vim.api.nvim_create_user_command('ThemeOneDark', function()
   set_theme('onedark')
 end, { desc = 'Switch to OneDark theme' })
+
+vim.api.nvim_create_user_command('ThemeTokyoNight', function()
+  set_theme('tokyonight')
+end, { desc = 'Switch to TokyoNight theme' })
+
+vim.api.nvim_create_user_command('ThemeKangawa', function()
+  set_theme('kanagawa')
+end, { desc = 'Switch to Kangawa theme' })

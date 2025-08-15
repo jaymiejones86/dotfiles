@@ -1,5 +1,5 @@
 font-family = "Hack Nerd Font Mono"
-theme = "catppuccin-mocha"
+theme = "tokyonight"
 macos-titlebar-style = hidden
 macos-non-native-fullscreen = true
 quit-after-last-window-closed = true
