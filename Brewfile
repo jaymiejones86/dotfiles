@@ -36,6 +36,7 @@ install lazygit
 install openssl
 install openssl@1.1
 install ripgrep
+install fd
 install shopify-cli
 install stow
 install zoxide
