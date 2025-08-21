@@ -31,6 +31,7 @@ install gcc
 install git-delta
 install git-lfs
 install git-machete
+install jj
 install jq
 install lazygit
 install openssl
