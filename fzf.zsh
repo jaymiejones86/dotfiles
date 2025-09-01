@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+  path+=(/opt/homebrew/opt/fzf/bin)
 fi
 
 # Auto-completion
@@ -10,4 +10,4 @@ fi
 
 # Key bindings
 # ------------
-# source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
