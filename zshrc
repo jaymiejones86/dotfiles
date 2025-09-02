@@ -100,7 +100,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # https://github.com/zsh-users/zsh-autosuggestions
-plugins=(transfer git z ruby macos bundler gem heroku rails rake docker yarn zsh-autosuggestions gpg-agent ssh-agent hanami zsh-interactive-cd timer)
+plugins=(transfer git z ruby macos brew bundler gem heroku rails rake docker yarn zsh-autosuggestions gpg-agent ssh-agent hanami zsh-interactive-cd timer)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
