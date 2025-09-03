@@ -3,7 +3,24 @@
 set -euo pipefail
 
 # === USAGE ===
-# ./run-claude-agent.sh [optional-branch-name] [-- claude-args...]
+# ./run-agent.sh <software> [optional-branch-name] [-- agent-args...]
+# software: claude, amp, or opencode
+
+# === VALIDATE SOFTWARE ARGUMENT ===
+if [[ $# -lt 1 ]]; then
+  echo "❌ Usage: $0 <software> [branch-name] [-- agent-args...]"
+  echo "   software: claude, amp, or opencode"
+  exit 1
+fi
+
+SOFTWARE="$1"
+shift
+
+# Validate software choice
+case "$SOFTWARE" in
+  claude|amp|opencode) ;;
+  *) echo "❌ Invalid software: $SOFTWARE. Must be: claude, amp, or opencode"; exit 1 ;;
+esac
 
 # === CONTEXT ===
 REPO_ROOT="$(git rev-parse --show-toplevel)"
@@ -17,12 +34,13 @@ USER_BRANCH="${1:-}"
 shift || true  # move past branch arg if provided
 
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-BRANCH_NAME="${USER_BRANCH:-feat/claude-agent-$TIMESTAMP}"
+BRANCH_NAME="${USER_BRANCH:-feat/agent-$SOFTWARE-$TIMESTAMP}"
 WORKTREE_PATH="$WORKTREE_BASE/$BRANCH_NAME"
 
 # === MAIN LOGIC ===
 
 echo "🔍 Detected repo root: $REPO_ROOT"
+echo "🤖 Using software: $SOFTWARE"
 echo "🌿 Creating branch: $BRANCH_NAME"
 echo "📁 Worktree location: $WORKTREE_PATH"
 
@@ -35,13 +53,26 @@ git worktree add -b "$BRANCH_NAME" "$WORKTREE_PATH"
 # Navigate to worktree
 cd "$WORKTREE_PATH"
 
-# === CLAUDE EXECUTION ===
+# === AGENT EXECUTION ===
 
-echo "🚀 Running Claude Code in isolated workspace..."
-CLAUDE_CMD="otter claude-code $*"
-eval "$CLAUDE_CMD"
+echo "🚀 Running $SOFTWARE in isolated workspace..."
 
-echo "✅ Claude Code completed in: $WORKTREE_PATH"
+# Map software to command
+case "$SOFTWARE" in
+  claude)
+    AGENT_CMD="otter claude-code $*"
+    ;;
+  amp)
+    AGENT_CMD="amp $*"
+    ;;
+  opencode)
+    AGENT_CMD="opencode $*"
+    ;;
+esac
+
+eval "$AGENT_CMD"
+
+echo "✅ $SOFTWARE completed in: $WORKTREE_PATH"
 
 # === Instructions ===
 

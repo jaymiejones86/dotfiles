@@ -7,7 +7,7 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
 WORKTREE_DIR="$REPO_ROOT/../worktrees"
-BRANCH_PREFIX="feat/claude-agent"
+BRANCH_PREFIX="feat/agent"
 
 # === OPTIONS ===
 DELETE_BRANCHES=false
