@@ -241,3 +241,8 @@ path+=(
 )
 
 [[ ! $(command -v nix) && -e "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh" ]] && source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/jaymiejones/.lmstudio/bin"
+# End of LM Studio CLI section
+
