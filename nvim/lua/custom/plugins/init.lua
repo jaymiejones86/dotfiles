@@ -88,5 +88,13 @@ return {
       "nvim-tree/nvim-web-devicons"
     }
   },
+
+  -- Amp CLI/IDE Support in Vim
+  {
+    "sourcegraph/amp.nvim",
+    branch = "main", 
+    lazy = false,
+    opts = { auto_start = true, log_level = "info" },
+  },
 }
 
