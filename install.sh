@@ -34,6 +34,8 @@ ln -s ~/dotfiles/gnupg ~/.gnupg
 ln -s ~/dotfiles/default-gems ~/.default-gems
 ln -s ~/dotfiles/aerospace.toml ~/.aerospace.toml
 ln -s ~/dotfiles/ghostty ~/.config/
+ln -s ~/dotfiles/sketchybar/sketchybarrc ~/.config/sketchybar/sketchybarrc
+ln -s ~/dotfiles/sketchybar/plugins ~/.config/sketchybar/plugins
 take ~/.localsettings
 
 # Setup SSH Git Signing
