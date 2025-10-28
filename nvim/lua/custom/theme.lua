@@ -50,3 +50,7 @@ end, { desc = 'Switch to TokyoNight theme' })
 vim.api.nvim_create_user_command('ThemeKangawa', function()
   set_theme('kanagawa')
 end, { desc = 'Switch to Kangawa theme' })
+
+vim.api.nvim_create_user_command('ThemeDuskfox', function()
+  set_theme('duskfox')
+end, { desc = 'Switch to Duskfox theme' })

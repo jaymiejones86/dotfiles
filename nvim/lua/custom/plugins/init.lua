@@ -55,6 +55,11 @@ return {
   
   -- Themes
   { 
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1050,
+  },
+  { 
     "oxfist/night-owl.nvim",
     lazy = false,
     priority = 1050,
