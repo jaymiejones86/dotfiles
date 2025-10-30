@@ -5,6 +5,11 @@
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = []
 
+# Callback to update SketchyBar when workspace changes
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change'
+]
+
 # Start AeroSpace at login
 start-at-login = false
 
