@@ -236,9 +236,13 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # asdf configuration
-path+=(
-  ${ASDF_DATA_DIR:-$HOME/.asdf}/shims
-)
+# path+=(
+#   ${ASDF_DATA_DIR:-$HOME/.asdf}/shims
+# )
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
+asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
 
 [[ ! $(command -v nix) && -e "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh" ]] && source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
 
