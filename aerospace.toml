@@ -60,7 +60,7 @@ automatically-unhide-macos-hidden-apps = false
     inner.vertical =   8
     outer.left =       8
     outer.bottom =     8
-    outer.top =        48 # Account for Sketchybar height (40px)
+    outer.top =        44 # Account for Sketchybar height (36px)
     outer.right =      8
 
 # 'main' binding mode declaration
