@@ -42,6 +42,9 @@ take ~/.localsettings
 touch ~/.ssh/allowed_signers
 echo "$(git config --get user.email) namespaces=\"git\" $(cat ~/.ssh/id_rsa.pub)" >> ~/.ssh/allowed_signers
 
+# Fonts
+cp -Rp ~/dotfiles/fonts/* ~/Library/Fonts
+
 # Install ASDF Plugins
 
 asdf plugin-add pnpm
