@@ -63,6 +63,12 @@ asdf plugin-add postgres
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# Install project testing
+curl -sL https://raw.githubusercontent.com/tobi/try/refs/heads/main/try.rb > ~/.local/try.rb
+
+## Make "try" executable so it can be run directly
+chmod +x ~/.local/try.rb
+
 # OLD
 
 # rcup -d dotfiles -x install.sh -x README.md -x VIM-PLUGINS.md -x Brewfile -x af-magic-mod.zsh-theme -x vimrc.d/* -x memegifs.sh -x Oceanic-Dark.itermcolors -x scripts/*

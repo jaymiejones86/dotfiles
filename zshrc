@@ -258,3 +258,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Added by Antigravity
+export PATH="/Users/jaymiejones/.antigravity/antigravity/bin:$PATH"
+
+# Try: https://github.com/tobi/try
+eval "$(ruby ~/.local/try.rb init ~/src/tries)"
