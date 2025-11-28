@@ -6,7 +6,7 @@
 [user]
 	name = Jaymie Jones
 	email = jaymiejones86@gmail.com
-	signingkey = /Users/jaymiejones/.ssh/id_rsa.pub
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBct8TQnO0FrBygKaVz45a4Ru0E6KtXALKejDsLef84v
 [core]
 	excludesfile = /Users/jaymiejones/.gitignore_global
 	attributesfile = /Users/jaymiejones/.gitattributes
@@ -62,3 +62,4 @@
 	eventTarget = af_unix:dgram:/tmp/olly-git-trace2.sock
 [gpg "ssh"]
 	allowedSignersFile = /Users/jaymiejones/.ssh/allowed_signers
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
