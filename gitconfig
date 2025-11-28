@@ -48,7 +48,6 @@
 [pull]
 	rebase = false
 [gpg]
-	program = gpg
 	format = ssh
 [diff]
 	colorMoved = default
