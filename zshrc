@@ -253,10 +253,13 @@ export PATH="$PATH:/Users/jaymiejones/.lmstudio/bin"
 
 # pnpm
 export PNPM_HOME="/Users/jaymiejones/Library/pnpm"
+
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+export PATH="$HOME/Library/pnpm:$PATH"
 # pnpm end
 
 # Added by Antigravity
