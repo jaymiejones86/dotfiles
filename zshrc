@@ -271,3 +271,6 @@ eval "$(ruby ~/.local/try.rb init ~/src/tries)"
 # Entire.io config
 # Installed via curl -fsSL https://entire.io/install.sh | bash
 export PATH="/Users/jaymiejones/.local/bin:$PATH"
+
+# Entire CLI shell completion
+autoload -Uz compinit && compinit && source <(entire completion zsh)
