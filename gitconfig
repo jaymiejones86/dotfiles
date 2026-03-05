@@ -60,6 +60,7 @@
 	conflictstyle = diff3
 [trace2]
 	eventTarget = af_unix:dgram:/tmp/olly-git-trace2.sock
+	configparams = remote.origin.url
 [gpg "ssh"]
 	allowedSignersFile = /Users/jaymiejones/.ssh/allowed_signers
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
