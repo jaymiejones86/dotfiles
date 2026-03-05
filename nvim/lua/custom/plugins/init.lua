@@ -23,6 +23,7 @@ return {
   "ap/vim-css-color", -- CSS color highlighting
   "mattn/emmet-vim", -- HTML/CSS expansion shortcuts
   "wuelnerdotexe/vim-astro", -- Astro framework support
+  "elixir-editors/vim-elixir",
   
   -- Utility Plugins
   "sjl/strftimedammit.vim", -- Time formatting utilities
