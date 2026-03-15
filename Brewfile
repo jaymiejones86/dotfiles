@@ -59,7 +59,8 @@ install claude-squad
 install sst/tap/opencode
 install --cask shortcat
 install --cask nikitabobko/tap/aerospace
-brew tap FelixKratz/formulae
-brew install sketchybar
-brew tap AlexsJones/llmfit
-brew install llmfit
+tap FelixKratz/formulae
+install sketchybar
+tap AlexsJones/llmfit
+install llmfit
+install --cask steipete/tap/codexbar
