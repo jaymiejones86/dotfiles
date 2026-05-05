@@ -10,6 +10,9 @@ vim.o.shortmess = "I"
 -- Enable relative line numbers in addition to the standard line numbers
 vim.wo.relativenumber = true
 
+-- Show vertical guides for preferred maximum line lengths
+vim.o.colorcolumn = '80,100'
+
 -- Ruby/RuboCop configuration (commented for reference)
 -- This was commented in the original config
 -- vim.g.vimrubocop_config = './rubocop.yml'
