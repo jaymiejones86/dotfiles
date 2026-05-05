@@ -13,6 +13,14 @@ vim.wo.relativenumber = true
 -- Show vertical guides for preferred maximum line lengths
 vim.o.colorcolumn = '80,100'
 
+-- Avoid a Neovim/Treesitter runtime error when opening larger Markdown files.
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = function(args)
+    pcall(vim.treesitter.stop, args.buf)
+  end,
+})
+
 -- Ruby/RuboCop configuration (commented for reference)
 -- This was commented in the original config
 -- vim.g.vimrubocop_config = './rubocop.yml'

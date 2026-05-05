@@ -13,7 +13,6 @@ return {
   
   -- Text Manipulation
   "tpope/vim-surround",
-  "nathanaelkane/vim-indent-guides",
   "mg979/vim-visual-multi", -- Multiple cursors
   
   -- Ruby Development
@@ -29,7 +28,6 @@ return {
   "sjl/strftimedammit.vim", -- Time formatting utilities
   "tpope/vim-obsession", -- Session management
   "mbbill/undotree", -- Undo tree visualization
-  "kdheepak/lazygit.nvim", -- LazyGit integration
 
   -- Git Management
   {
@@ -89,6 +87,7 @@ return {
   -- Markdown Support
   {
     "OXY2DEV/markview.nvim",
+    enabled = false, -- Disabled until compatible with the current Neovim/Treesitter runtime
     event = "VeryLazy", -- Load after startup is complete
     dependencies = {
       "nvim-tree/nvim-web-devicons"
@@ -103,4 +102,3 @@ return {
     opts = { auto_start = true, log_level = "info" },
   },
 }
-
