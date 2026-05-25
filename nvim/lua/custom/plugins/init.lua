@@ -54,6 +54,11 @@ return {
   
   -- Themes
   { 
+    "nlknguyen/papercolor-theme",
+    lazy = false,
+    priority = 950,
+  },
+  { 
     "EdenEast/nightfox.nvim",
     lazy = false,
     priority = 1050,

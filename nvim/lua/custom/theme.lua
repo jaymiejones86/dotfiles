@@ -27,6 +27,9 @@ local function set_theme(theme_name)
 end
 
 -- Create user commands for easy theme switching
+vim.api.nvim_create_user_command('ThemePaperColor', function()
+  set_theme('papercolor')
+end, { desc = 'Switch to Paper Color theme' })
 vim.api.nvim_create_user_command('ThemeNightOwl', function()
   set_theme('night-owl')
 end, { desc = 'Switch to Night Owl theme' })
