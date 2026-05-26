@@ -172,6 +172,7 @@ require('lazy').setup({
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
@@ -365,6 +366,33 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
+
+-- nvim-treesitter's legacy branch expects directive captures to be single
+-- TSNodes, but Neovim 0.12 passes capture lists. Keep markdown injections
+-- compatible for plugins like render-markdown.nvim.
+do
+  local query = require 'vim.treesitter.query'
+  local aliases = { ex = 'elixir', pl = 'perl', sh = 'bash', ts = 'typescript', uxn = 'uxntal' }
+
+  local function first_node(match, capture_id)
+    local node = match[capture_id]
+    if type(node) == 'table' then
+      node = node[1]
+    end
+    return node
+  end
+
+  query.add_directive('set-lang-from-info-string!', function(match, _, bufnr, pred, metadata)
+    local node = first_node(match, pred[2])
+    if not node then
+      return
+    end
+
+    local lang = vim.treesitter.get_node_text(node, bufnr):lower()
+    local filetype = vim.filetype.match { filename = 'a.' .. lang }
+    metadata['injection.language'] = filetype or aliases[lang] or lang
+  end, { force = true })
+end
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
