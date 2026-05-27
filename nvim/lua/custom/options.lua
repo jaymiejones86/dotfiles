@@ -21,6 +21,14 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- Ensure TypeScript buffers use the TypeScript treesitter parser for highlighting.
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'typescript', 'typescriptreact' },
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
+})
+
 -- Ruby/RuboCop configuration (commented for reference)
 -- This was commented in the original config
 -- vim.g.vimrubocop_config = './rubocop.yml'
