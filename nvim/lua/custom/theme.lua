@@ -22,6 +22,12 @@ vim.cmd.colorscheme 'tokyonight'
 
 -- Function to easily switch themes (optional utility)
 local function set_theme(theme_name)
+  if theme_name == 'papercolor' or theme_name == 'PaperColor' then
+    vim.o.background = 'light'
+  else
+    vim.o.background = 'dark'
+  end
+
   vim.cmd.colorscheme(theme_name)
   print("Theme switched to: " .. theme_name)
 end
