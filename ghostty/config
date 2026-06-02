@@ -1,4 +1,5 @@
 font-family = "Geist Mono"
+font-size = 14
 theme = "tokyonight"
 macos-titlebar-style = hidden
 macos-non-native-fullscreen = true
