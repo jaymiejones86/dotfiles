@@ -1,0 +1,8 @@
+onboarding = false
+default_shell = "zsh"
+prefix = "ctrl+a"
+split_vertical = "prefix+|"
+
+[theme]
+name = "dracula"
+auto_switch = false

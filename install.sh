@@ -37,6 +37,7 @@ ln -s ~/dotfiles/ghostty ~/.config/
 ln -s ~/dotfiles/sketchybar/sketchybarrc ~/.config/sketchybar/sketchybarrc
 ln -s ~/dotfiles/sketchybar/plugins ~/.config/sketchybar/plugins
 ln -s ~/dotfiles/opencode.json ~/.config/opencode/opencode.json
+ln -s ~/dotfiles/herdr.toml ~/.config/herdr/config.toml
 take ~/.localsettings
 
 # Setup SSH Git Signing

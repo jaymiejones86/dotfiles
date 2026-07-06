@@ -6,6 +6,7 @@ install --cask ghostty
 install git
 install alacritty
 install tmux
+install herdr
 install wget
 install vim
 install neovim
