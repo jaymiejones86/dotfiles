@@ -100,7 +100,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # https://github.com/zsh-users/zsh-autosuggestions
-plugins=(transfer git z ruby macos brew bundler gem heroku rails rake docker yarn zsh-autosuggestions gpg-agent ssh-agent hanami zsh-interactive-cd timer)
+plugins=(git z ruby macos brew zsh-autosuggestions gpg-agent ssh-agent zsh-interactive-cd timer)
 
 # Customize to your needs...
 source $ZSH/oh-my-zsh.sh
@@ -213,12 +213,7 @@ alias tasks="bartib"
 # LS aliases already added in File System & Utilities section
 
 # FZF configuration
-() {
-  local fzf_paths=("${HOME}/.fzf.zsh" "${HOME}/dotfiles/fzf.zsh")
-  for config in $fzf_paths; do
-    [[ -f $config ]] && source $config
-  done
-}
+[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
 
 #------------------------------------------------------------------------------
 # eza Aliases
@@ -242,7 +237,6 @@ eval "$(zoxide init zsh)"
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
-asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
 
 [[ ! $(command -v nix) && -e "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh" ]] && source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
 
@@ -266,11 +260,32 @@ export PATH="$HOME/Library/pnpm:$PATH"
 export PATH="/Users/jaymiejones/.antigravity/antigravity/bin:$PATH"
 
 # Try: https://github.com/tobi/try
-eval "$(ruby ~/.local/try.rb init ~/src/tries)"
+try() {
+  local try_init="$HOME/.local/try.rb"
+  local try_config
+
+  if [[ ! -f $try_init ]]; then
+    print -u2 "try: $try_init not found"
+    return 1
+  fi
+
+  unfunction try
+  try_config="$(ruby "$try_init" init "$HOME/src/tries")" || return
+  eval "$try_config"
+
+  if (( ! $+functions[try] )); then
+    print -u2 "try: failed to initialize"
+    return 1
+  fi
+
+  try "$@"
+}
 
 # Entire.io config
 # Installed via curl -fsSL https://entire.io/install.sh | bash
 export PATH="/Users/jaymiejones/.local/bin:$PATH"
 
 # Entire CLI shell completion
-autoload -Uz compinit && compinit && source <(entire completion zsh)
+if command -v entire >/dev/null; then
+  source <(entire completion zsh)
+fi
