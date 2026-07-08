@@ -42,6 +42,7 @@ install ripgrep
 install fd
 install shopify-cli
 install stow
+install hunk
 install zoxide
 install zsh-syntax-highlighting
 install autoconf
