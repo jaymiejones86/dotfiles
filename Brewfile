@@ -66,3 +66,5 @@ install sketchybar
 tap AlexsJones/llmfit
 install llmfit
 install --cask steipete/tap/codexbar
+install --cask fluidvoice
+install --cask font-hack-nerd-font
