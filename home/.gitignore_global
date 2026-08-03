@@ -1,4 +1,3 @@
-*.vim
 .DS_Store
 .vscode
 .irb_history

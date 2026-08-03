@@ -11,4 +11,3 @@ if has("statusline") && !&cp
   set statusline+=%{ObsessionStatus()}
 endif
 
-

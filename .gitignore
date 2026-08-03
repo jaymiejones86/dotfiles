@@ -1,8 +1,11 @@
 # OS Files
 .DS_Store
 
-# Bundler
-bundle/cache
+# State left by the previous whole-directory links
+bundle/cache/
+nvimrc.d/db_ui_settings.vim
 
 # GPG
-gnupg/
+gnupg/*
+!gnupg/gpg.conf
+!gnupg/gpg-agent.conf

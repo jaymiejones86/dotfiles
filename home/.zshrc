@@ -59,11 +59,6 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
 #------------------------------------------------------------------------------
-# Development Tools
-#------------------------------------------------------------------------------
-alias memegifs=$HOME"/dotfiles/memegifs.sh"
-
-#------------------------------------------------------------------------------
 # Ruby & Rails
 #------------------------------------------------------------------------------
 alias rmigrate="bundle exec rake db:migrate"
@@ -103,12 +98,12 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git z ruby macos brew zsh-autosuggestions gpg-agent ssh-agent zsh-interactive-cd timer)
 
 # Customize to your needs...
-source $ZSH/oh-my-zsh.sh
+[[ -f $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 # export PATH=$PATH:/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin
 # Path configuration
 path=(
   $path
-  ./bin
+  $HOME/.local/bin
   /Applications/Postgres.app/Contents/Versions/latest/bin
   /usr/local/bin
   /usr/local/sbin
@@ -164,10 +159,11 @@ path+=(
 )
 
 # https://github.com/zsh-users/zsh-syntax-highlighting
-source /Users/jaymiejones/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -f ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
+  source ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Load direnv
-eval "$(direnv hook zsh)"
+command -v direnv >/dev/null && eval "$(direnv hook zsh)"
 
 #==============================================================================
 # Mac Silicon Support
@@ -221,14 +217,11 @@ alias tasks="bartib"
 alias ll='eza --oneline --long --header --modified --created --git'
 alias llt='eza --oneline --long --header --modified --created --git --tree --level=2'
 
-# Load custom scripts
-path+=($HOME/dotfiles/scripts)
-
 # Load starship prompt
-eval "$(starship init zsh)"
+command -v starship >/dev/null && eval "$(starship init zsh)"
 
 # Load Zoxide
-eval "$(zoxide init zsh)"
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
 # asdf configuration
 # path+=(

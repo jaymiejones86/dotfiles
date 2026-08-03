@@ -1,5 +1,5 @@
 [general]
-working_directory = "/Users/jaymiejones/code"
+working_directory = "~/code"
 
 [colors.bright]
 black = "#575b70"

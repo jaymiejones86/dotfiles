@@ -65,4 +65,3 @@ done
 
 echo ""
 echo "✨ Cleanup complete. Worktrees cleaned: $CLEANED"
-

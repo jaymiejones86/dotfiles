@@ -8,8 +8,8 @@
 	email = jaymiejones86@gmail.com
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBct8TQnO0FrBygKaVz45a4Ru0E6KtXALKejDsLef84v
 [core]
-	excludesfile = /Users/jaymiejones/.gitignore_global
-	attributesfile = /Users/jaymiejones/.gitattributes
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes
 	pager = delta
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -55,14 +55,18 @@
 	version = 2
 
 [include]
-  path = /Users/jaymiejones/.local/.gitconfig-local
+  path = ~/.local/.gitconfig-local
 [merge]
 	conflictstyle = diff3
-[trace2]
-	eventTarget = af_unix:dgram:/tmp/olly-git-trace2.sock
-	configparams = remote.origin.url
 [gpg "ssh"]
-	allowedSignersFile = /Users/jaymiejones/.ssh/allowed_signers
+	allowedSignersFile = ~/.ssh/allowed_signers
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [init]
 	defaultBranch = main
+[maintenance]
+	repo = /Users/jaymiejones/work/jaymiej-dotfiles
+	repo = /Users/jaymiejones/work/mind
+	repo = /Users/jaymiejones/work/bena-growth-and-impact-review-cli
+	repo = /Users/jaymiejones/work/danj_playpen
+	repo = /Users/jaymiejones/work/canva-claude-skills
+	repo = /Users/jaymiejones/work/canva-gemini-extension
