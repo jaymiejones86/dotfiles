@@ -22,7 +22,7 @@ Preview the setup before changing anything:
 ./install.sh --dry-run
 ```
 
-Then link the dotfiles and optionally install the declared packages and fonts:
+Then link the dotfiles and optionally run the additional setup phases:
 
 ```sh
 ./install.sh
@@ -52,6 +52,7 @@ The path under `home/` is the complete source-to-target mapping. For example:
 | `home/.zshrc` | `~/.zshrc` |
 | `home/.config/nvim/init.lua` | `~/.config/nvim/init.lua` |
 | `home/.config/ghostty/config` | `~/.config/ghostty/config` |
+| `home/.pi/agent/settings.json` | `~/.pi/agent/settings.json` |
 | `home/.bundle/config` | `~/.bundle/config` |
 | `home/.local/bin/run-agent` | `~/.local/bin/run-agent` |
 
@@ -135,7 +136,14 @@ Install bundled fonts on macOS:
 ./install.sh --fonts
 ```
 
-Run links, packages, and fonts together:
+Install or update the official Dracula theme used by the managed Pi Agent
+settings:
+
+```sh
+./install.sh --pi-theme
+```
+
+Run links and every optional setup phase together:
 
 ```sh
 ./install.sh --all
@@ -143,7 +151,26 @@ Run links, packages, and fonts together:
 
 These phases are opt-in so updating a symlink never unexpectedly downloads or
 executes third-party software. Homebrew itself, Oh My Zsh, language runtimes,
-SSH signing keys, and tool-specific plugins should be installed independently.
+SSH signing keys, and other tool-specific plugins should be installed
+independently.
+
+## Pi Agent
+
+Pi's global settings are managed at `home/.pi/agent/settings.json`. They select
+the Dracula theme and pin the configured npm and Git packages for reproducible
+installation. Pi itself is not installed by this repository.
+
+The theme is kept outside the dotfiles repository at
+`${XDG_DATA_HOME:-$HOME/.local/share}/pi-themes/dracula`. The `--pi-theme`
+phase clones the official theme when absent, fast-forwards it when already
+installed, and links `~/.pi/agent/themes/dracula.json` to its theme file.
+Restart Pi after installing or updating the theme.
+
+References:
+
+- [Kun's Pi Agent config](https://blog.kunchenguid.com/p/kuns-pi-agent-config)
+- [Dracula for Pi](https://draculatheme.com/pi-coding-agent)
+- [Pi theme documentation](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/themes.md)
 
 ## Local Configuration
 

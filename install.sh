@@ -8,6 +8,7 @@ home_directory=$(CDPATH= cd -- "$HOME" && pwd -P)
 dry_run=false
 install_brew=false
 install_fonts=false
+install_pi_theme=false
 adopt_count=0
 adopted=0
 linked=0
@@ -26,9 +27,10 @@ Link the files under home/ to the equivalent paths in $HOME.
 
 Options:
   --adopt FILE  Move a file from $HOME into home/ and replace it with a link
-  --all         Link dotfiles, install Brewfile packages, and install fonts
+  --all         Link dotfiles and run all optional installation phases
   --brew        Install packages with Homebrew Bundle
   --fonts       Copy bundled fonts to ~/Library/Fonts
+  --pi-theme    Install or update the Dracula theme for Pi Agent
   --dry-run     Print changes without modifying the filesystem
   -h, --help    Show this help
 
@@ -271,11 +273,51 @@ install_font_files() {
   done < <(find "$repo_root/fonts" -type f ! -name '.DS_Store' -print | LC_ALL=C sort)
 }
 
+install_pi_dracula_theme() {
+  local theme_dir="${XDG_DATA_HOME:-$HOME/.local/share}/pi-themes/dracula"
+  local theme_source="$theme_dir/dracula.json"
+  local theme_target="$HOME/.pi/agent/themes/dracula.json"
+
+  if ! command -v git >/dev/null 2>&1; then
+    printf 'error: Git is required for --pi-theme\n' >&2
+    return 1
+  fi
+
+  if [[ -d $theme_dir/.git ]]; then
+    run git -C "$theme_dir" pull --ff-only
+  elif [[ -e $theme_dir || -L $theme_dir ]]; then
+    printf 'error: Dracula theme destination already exists: %s\n' "$theme_dir" >&2
+    return 1
+  else
+    run mkdir -p "$(dirname "$theme_dir")"
+    run git clone https://github.com/dracula/pi-coding-agent.git "$theme_dir"
+  fi
+
+  run mkdir -p "$(dirname "$theme_target")"
+  if [[ -L $theme_target ]]; then
+    if [[ $(/usr/bin/readlink "$theme_target") == "$theme_source" ]]; then
+      printf 'unchanged: Pi Dracula theme: %s\n' "$theme_target"
+      return 0
+    fi
+    printf 'error: refusing to replace existing Pi theme link: %s -> %s\n' \
+      "$theme_target" "$(/usr/bin/readlink "$theme_target")" >&2
+    return 1
+  fi
+  if [[ -e $theme_target ]]; then
+    printf 'error: refusing to replace existing Pi theme: %s\n' "$theme_target" >&2
+    return 1
+  fi
+
+  run ln -s "$theme_source" "$theme_target"
+  printf 'install: Pi Dracula theme: %s -> %s\n' "$theme_target" "$theme_source"
+}
+
 while (($#)); do
   case "$1" in
     --all)
       install_brew=true
       install_fonts=true
+      install_pi_theme=true
       ;;
     --adopt)
       if (($# < 2)); then
@@ -288,6 +330,7 @@ while (($#)); do
       ;;
     --brew) install_brew=true ;;
     --fonts) install_fonts=true ;;
+    --pi-theme) install_pi_theme=true ;;
     --dry-run) dry_run=true ;;
     -h|--help)
       usage
@@ -322,6 +365,7 @@ fi
 
 $install_brew && install_homebrew_packages
 $install_fonts && install_font_files
+$install_pi_theme && install_pi_dracula_theme
 
 printf '\nDotfiles: %d adopted, %d linked, %d unchanged, %d directory links migrated, %d obsolete links removed.\n' \
   "$adopted" "$linked" "$unchanged" "$migrated" "$removed_legacy"
