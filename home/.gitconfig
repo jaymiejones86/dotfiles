@@ -63,10 +63,3 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [init]
 	defaultBranch = main
-[maintenance]
-	repo = /Users/jaymiejones/work/jaymiej-dotfiles
-	repo = /Users/jaymiejones/work/mind
-	repo = /Users/jaymiejones/work/bena-growth-and-impact-review-cli
-	repo = /Users/jaymiejones/work/danj_playpen
-	repo = /Users/jaymiejones/work/canva-claude-skills
-	repo = /Users/jaymiejones/work/canva-gemini-extension
