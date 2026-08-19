@@ -3,3 +3,5 @@
 .irb_history
 Session.vim
 *.swp
+
+**/.claude/settings.local.json
