@@ -14,6 +14,14 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 
 ## Working method
 
+### Repository baseline
+
+- Every maintained repository must contain a concise, product-specific `AGENTS.md`, a `CODING_STANDARDS.md`, and a decision registry. Use `docs/decisions/README.md` for new repositories; an existing canonical registry may retain its established path when `AGENTS.md` links it explicitly.
+- Create any missing baseline file before implementation. Keep repository guidance specific to the product, architecture, supported commands, invariants, and release boundaries; link to detailed runbooks instead of copying framework manuals.
+- Read the decision registry before planning or editing. Add or update a decision record whenever work introduces or changes a material product, architecture, data, security, dependency, operational, or release decision. Do not silently contradict an accepted decision.
+- Keep `CODING_STANDARDS.md` grounded in the repository's actual language, tooling, architecture, and tests. It must reference the canonical verification entrypoint and distinguish automated checks from device, browser, external-service, staging, or production evidence.
+- Elixir and Phoenix repositories must expose an executable `bin/verify` as the canonical local verification entrypoint. It must provide documented `fast` and `full` modes, with additional modes such as `assets`, `security`, or `release` only when the repository supports them. CI and repository documentation should call the same entrypoint rather than duplicate command lists.
+
 1. Inspect the relevant requirements, implementation, tests, and runtime.
 2. Make the smallest complete vertical slice, including authorization, validation, failure behavior, and user-visible states where relevant.
 3. Follow existing patterns and preserve accepted product, design, and architecture decisions.
