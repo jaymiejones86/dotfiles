@@ -18,6 +18,8 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 
 - Every maintained repository must contain a concise, product-specific `AGENTS.md`, a `CODING_STANDARDS.md`, and a decision registry. Use `docs/decisions/README.md` for new repositories; an existing canonical registry may retain its established path when `AGENTS.md` links it explicitly.
 - Create any missing baseline file before implementation. Keep repository guidance specific to the product, architecture, supported commands, invariants, and release boundaries; link to detailed runbooks instead of copying framework manuals.
+- Every application (web or native) must create and maintain the ability to seed the application with test data for local development purposes that is locked to development environments.
+- Every application (web or native) that requires a logged in user, requires at least one admin user which is documented in the README file, which includes the email and or username, password and OTP script (if applicable). When there are multiple roles or requires multiple users, users must be created for those roles.
 - Keep `CODING_STANDARDS.md` grounded in the repository's actual language, tooling, architecture, and tests. It must reference the canonical verification entrypoint and distinguish automated checks from device, browser, external-service, staging, or production evidence.
 - Elixir and Phoenix repositories must expose an executable `bin/verify` as the canonical local verification entrypoint. It must provide documented `fast` and `full` modes, with additional modes such as `assets`, `security`, or `release` only when the repository supports them. CI and repository documentation should call the same entrypoint rather than duplicate command lists.
 
@@ -53,7 +55,7 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 - Assume tracked and untracked changes belong to the user. Check status and diffs before editing and handoff; do not alter or include unrelated work without authorization.
 - Keep commits coherent and verified. For “commit all changes,” inspect every tracked and untracked change and check for secrets first.
 - Do not commit unless requested or required by project instructions. Do not push, amend, rebase, force-push, reset, or rewrite history unless explicitly requested.
-- Explain what changed and why in commit messages. Report the commit and remaining tree state; distinguish staged, committed, pushed, deployed, and verified.
+- Explain what changed and why in commit messages, detail is important. Report the commit and remaining tree state; distinguish staged, committed, pushed, deployed, and verified.
 - If Git fsmonitor IPC fails, retry the scoped command with `git -c core.fsmonitor=false` rather than changing repository configuration. If signing fails, preserve staged work and ask the user to unlock the signer or authorize an unsigned commit.
 
 ## Data, production, and external systems
