@@ -23,6 +23,7 @@ return {
   "mattn/emmet-vim", -- HTML/CSS expansion shortcuts
   "wuelnerdotexe/vim-astro", -- Astro framework support
   "elixir-editors/vim-elixir",
+  "cespare/vim-toml",
   
   -- Utility Plugins
   "sjl/strftimedammit.vim", -- Time formatting utilities
