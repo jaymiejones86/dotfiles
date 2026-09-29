@@ -60,6 +60,48 @@ Only files are linked. Parent directories are real directories in `$HOME`, so
 applications can create caches, lock files, and other runtime state without
 writing into this repository.
 
+The exception is `home/.agents/skills/`: the installer links each tracked skill
+directory as a unit so its `SKILL.md`, scripts, and references stay together.
+
+## Shared agent instructions and skills
+
+`home/.agents/AGENTS.md` is the tracked source for global working agreements.
+The installer creates these links:
+
+```text
+~/.agents/AGENTS.md       -> dotfiles/home/.agents/AGENTS.md
+~/.codex/AGENTS.md        -> ~/.agents/AGENTS.md
+~/.claude/CLAUDE.md       -> ~/.agents/AGENTS.md
+~/.agents/skills/<name>   -> dotfiles/home/.agents/skills/<name>
+~/.claude/skills/<name>   -> ~/.agents/skills/<name>
+```
+
+Codex discovers `~/.agents/skills/` directly, so it needs no duplicate links
+under `~/.codex/skills/`. The installer leaves provider-bundled, plugin-managed,
+and untracked local skills where their provider owns them. A skill whose name
+already exists as an unmanaged file, directory, or link is reported as a
+conflict and is never overwritten. Review that copy before moving or removing
+it, then rerun `./install.sh`.
+
+The tracked inventory contains the personal `ast-grep`, `design-taste-frontend`,
+`diagnose`, `grill-me`, `handoff`, `hatch-pet`, `project-bootstrap`, `to-prd`,
+and `write-a-skill` skills. Work-specific `ci-results` remains a local link to
+its original source and is not copied into this public repository. The
+Claude-provided `frontend-design` skill also remains in its original location
+because its referenced license file is not present in the installed copy.
+
+Preview and verify the links with:
+
+```sh
+./install.sh --agent-links --dry-run
+./install.sh --agent-links
+readlink ~/.agents/AGENTS.md
+readlink ~/.codex/AGENTS.md
+readlink ~/.claude/CLAUDE.md
+readlink ~/.agents/skills/hatch-pet
+readlink ~/.claude/skills/hatch-pet
+```
+
 ## Install
 
 Preview the link changes first:

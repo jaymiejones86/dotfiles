@@ -45,6 +45,7 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 - Use commands supported by the repository. Do not invent test, build, seed, or deployment commands.
 - Start with focused tests, then run applicable formatting, lint or static analysis, warnings-as-errors or type checks, broader tests, asset builds, and packaging checks proportional to the change.
 - Read documentation changes in their final form and check the diff.
+- For user-visible behavior changes, update the relevant documentation and record release-note context using the repository's established changelog or release workflow.
 - Verify UI work through the real entry point when available, including meaningful flows, representative viewports, and applicable accessibility. A screenshot alone is not runtime proof.
 - For security, migration, import, AI, and job work, verify relevant denial, isolation, validation, idempotency, redaction, and failure behavior. Use labelled isolated fixtures; deterministic fixtures do not prove live or production acceptance.
 - Do not weaken tests, safeguards, authentication, data isolation, or production behavior to accommodate a local environment problem.
@@ -61,6 +62,7 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 ## Data, production, and external systems
 
 - Protect secrets and private or production data. Never expose them in tracked files, logs, fixtures, commits, or responses; use sanitized diagnostics.
+- Use task-relevant non-public information for authorized internal research and answers. Before disclosing it to an external recipient, public audience, or unapproved service, obtain approval for both the specific content and destination. Never disclose secret values.
 - Default production diagnosis to read-only. Mutate production data, configuration, infrastructure, billing, email, or external services only with authorization and a clear target and blast radius.
 - Before destructive or difficult-to-reverse work, resolve the exact target, explain impact and recovery, and obtain required confirmation.
 - A local release or container build is “production-packaged,” not deployed. A deploy is complete only when the intended version is running and applicable migrations, health checks, logs, and a representative workflow are verified.

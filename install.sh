@@ -9,6 +9,7 @@ dry_run=false
 install_brew=false
 install_fonts=false
 install_pi_theme=false
+agent_links_only=false
 adopt_count=0
 adopted=0
 linked=0
@@ -31,6 +32,7 @@ Options:
   --brew        Install packages with Homebrew Bundle
   --fonts       Copy bundled fonts to ~/Library/Fonts
   --pi-theme    Install or update the Dracula theme for Pi Agent
+  --agent-links Link only shared agent instructions and skills
   --dry-run     Print changes without modifying the filesystem
   -h, --help    Show this help
 
@@ -153,6 +155,37 @@ link_file() {
   linked=$((linked + 1))
 }
 
+link_alias() {
+  local source=$1
+  local target=$2
+  local current
+
+  ensure_directory "$(dirname "$target")" || return
+
+  if [[ -L $target ]]; then
+    current=$(/usr/bin/readlink "$target")
+    if [[ $current == "$source" ]]; then
+      unchanged=$((unchanged + 1))
+      return
+    fi
+    if ! link_points_into_repo "$target"; then
+      printf 'conflict: refusing to replace unmanaged link: %s -> %s\n' \
+        "$target" "$current" >&2
+      conflicts=$((conflicts + 1))
+      return
+    fi
+    run rm "$target"
+  elif [[ -e $target ]]; then
+    printf 'conflict: refusing to replace existing path: %s\n' "$target" >&2
+    conflicts=$((conflicts + 1))
+    return
+  fi
+
+  run ln -s "$source" "$target"
+  printf 'link: %s -> %s\n' "$target" "$source"
+  linked=$((linked + 1))
+}
+
 adopt_file() {
   local input=$1
   local candidate
@@ -246,8 +279,27 @@ link_dotfiles() {
   local source
 
   while IFS= read -r source; do
+    case "$source" in
+      "$home_root/.agents/AGENTS.md") continue ;;
+      "$home_root/.agents/skills/"*) continue ;;
+    esac
     link_file "$source"
   done < <(find "$home_root" \( -type f -o -type l \) -print | LC_ALL=C sort)
+}
+
+link_agent_skills() {
+  local source
+  local name
+  local previous_conflicts
+
+  while IFS= read -r source; do
+    name=$(basename "$source")
+    previous_conflicts=$conflicts
+    link_alias "$source" "$HOME/.agents/skills/$name"
+    if ((conflicts == previous_conflicts)); then
+      link_alias "$HOME/.agents/skills/$name" "$HOME/.claude/skills/$name"
+    fi
+  done < <(find "$home_root/.agents/skills" -mindepth 1 -maxdepth 1 -type d -print | LC_ALL=C sort)
 }
 
 install_homebrew_packages() {
@@ -331,6 +383,7 @@ while (($#)); do
     --brew) install_brew=true ;;
     --fonts) install_fonts=true ;;
     --pi-theme) install_pi_theme=true ;;
+    --agent-links) agent_links_only=true ;;
     --dry-run) dry_run=true ;;
     -h|--help)
       usage
@@ -352,7 +405,16 @@ for ((index = 0; index < adopt_count; index++)); do
   adopt_file "${adopt_paths[$index]}"
 done
 
-link_dotfiles
+if ! $agent_links_only; then
+  link_dotfiles
+fi
+previous_conflicts=$conflicts
+link_file "$home_root/.agents/AGENTS.md"
+if ((conflicts == previous_conflicts)); then
+  link_alias "$HOME/.agents/AGENTS.md" "$HOME/.codex/AGENTS.md"
+  link_alias "$HOME/.agents/AGENTS.md" "$HOME/.claude/CLAUDE.md"
+fi
+link_agent_skills
 
 if [[ -L $HOME/.gnupg ]] && link_points_into_repo "$HOME/.gnupg"; then
   printf 'warning: ~/.gnupg still points into this repository; see README.md before migrating it.\n' >&2
