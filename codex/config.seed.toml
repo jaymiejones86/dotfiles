@@ -1,0 +1,139 @@
+# Codex seed defaults (seed-only, one-way).
+#
+# Codex owns ~/.codex/config.toml and rewrites it during normal use (project
+# trust entries, hook hashes, marketplace cache paths, MCP servers, desktop
+# state). This file tracks only portable, non-sensitive defaults. Apply with:
+#
+#   ./codex/seed-codex-config.sh
+#   ./codex/seed-codex-config.sh --dry-run
+#
+# The script only adds missing keys; it never overwrites local values and
+# never syncs local changes back here. Editing a value here does not change
+# an existing local value (edit ~/.codex/config.toml directly for that).
+# Re-running after adding keys here seeds just the new keys.
+#
+# Deliberately excluded: notify hooks, marketplaces (absolute cache paths),
+# [projects.*] (machine paths and private project names), [hooks.state]
+# (generated hashes), [shell_environment_policy] (generated),
+# [mcp_servers.*] (absolute paths, hosts, usernames, work endpoints),
+# skills paths, and auth/history/databases elsewhere in ~/.codex/.
+# Last reviewed against ~/.codex/config.toml on 2026-10-14.
+
+personality = "pragmatic"
+model = "gpt-6.1-sol"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+service_tier = "default"
+approval_policy = "on-request"
+# approvals_reviewer is intentionally unset: the live config pins a custom
+# reviewer name that may not exist on a fresh machine. Set it locally in
+# ~/.codex/config.toml once verified.
+
+[otel]
+exporter = "none"
+environment = "dev"
+log_user_prompt = true
+
+[features]
+hooks = true
+memories = true
+goals = true
+js_repl = false
+
+[memories]
+generate_memories = true
+use_memories = true
+extract_model = "gpt-6-luna"
+consolidation_model = "gpt-6.1-sol"
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."canva@openai-curated"]
+enabled = true
+
+[plugins."linear@openai-curated"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."code-review@openai-bundled"]
+enabled = true
+
+[desktop]
+appearanceLightCodeThemeId = "catppuccin"
+appearanceDarkCodeThemeId = "dracula"
+composerEnterBehavior = "cmdIfMultiline"
+preventSleepWhileRunning = true
+keepRemoteControlAwakeWhilePluggedIn = true
+git-show-sidebar-pr-icons = true
+followUpQueueMode = "queue"
+dock-icon-preference = "codex-system"
+conversationDetailMode = "STEPS_COMMANDS"
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra", "max"]
+appearanceTheme = "system"
+sansFontSize = 14
+codeFontSize = 14
+
+[desktop.appearanceLightChromeTheme]
+accent = "#8839ef"
+contrast = 45
+ink = "#4c4f69"
+opaqueWindows = false
+surface = "#eff1f5"
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = '"Geist Mono", "Jetbrains Mono"'
+ui = "Inter"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#40a02b"
+diffRemoved = "#d20f39"
+skill = "#8839ef"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#ff79c6"
+accentSource = "custom"
+contrast = 70
+ink = "#f8f8f2"
+opaqueWindows = true
+surface = "#282a36"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+ui = '"IoskeleyMonoTerm Nerd Font Mono"'
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#50fa7b"
+diffRemoved = "#ff5555"
+skill = "#ff79c6"
+
+[desktop.open-in-target-preferences]
+global = "ghostty"

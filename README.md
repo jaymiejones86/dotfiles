@@ -40,6 +40,7 @@ guards optional tools, so it remains usable while the machine is bootstrapped.
 ├── home/       Files linked into $HOME, preserving their relative paths
 ├── fonts/      Optional font files copied into ~/Library/Fonts
 ├── gnupg/      GPG config and existing local state; not installed automatically
+├── codex/      Seed-only Codex defaults plus a missing-only seeder script
 ├── archive/    Inactive Bash, Vim, and superseded application configuration
 ├── Brewfile    Optional Homebrew Bundle packages
 └── install.sh  Safe, idempotent linker and optional package/font installer
@@ -213,6 +214,22 @@ References:
 - [Kun's Pi Agent config](https://blog.kunchenguid.com/p/kuns-pi-agent-config)
 - [Dracula for Pi](https://draculatheme.com/pi-coding-agent)
 - [Pi theme documentation](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/themes.md)
+
+## Codex Configuration Seed
+
+`~/.codex/config.toml` is owned by Codex and mixes portable preferences with
+machine paths, project names, hook hashes, and MCP endpoints, so the live
+file is not tracked. `codex/config.seed.toml` keeps only portable,
+non-sensitive defaults (model, sandbox/approval policy, features, plugins,
+desktop theme). Seed missing keys without overwriting local values:
+
+```sh
+./codex/seed-codex-config.sh --dry-run
+./codex/seed-codex-config.sh
+```
+
+One-way only: the script never syncs local changes back. Edit
+`~/.codex/config.toml` directly to change an existing value.
 
 ## Local Configuration
 
