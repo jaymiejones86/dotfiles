@@ -226,10 +226,13 @@ desktop theme). Seed missing keys without overwriting local values:
 ```sh
 ./codex/seed-codex-config.sh --dry-run
 ./codex/seed-codex-config.sh
+./codex/seed-codex-config.sh --check-drift
 ```
 
 One-way only: the script never syncs local changes back. Edit
 `~/.codex/config.toml` directly to change an existing value.
+`--check-drift` is read-only: it reports seed keys whose local values
+differ (exit 1) without writing anything.
 
 ## Local Configuration
 

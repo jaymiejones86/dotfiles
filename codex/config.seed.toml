@@ -6,6 +6,7 @@
 #
 #   ./codex/seed-codex-config.sh
 #   ./codex/seed-codex-config.sh --dry-run
+#   ./codex/seed-codex-config.sh --check-drift  (read-only value check)
 #
 # The script only adds missing keys; it never overwrites local values and
 # never syncs local changes back here. Editing a value here does not change
@@ -125,7 +126,7 @@ accentSource = "custom"
 contrast = 70
 ink = "#f8f8f2"
 opaqueWindows = true
-surface = "#282a36"
+surface = "#1b1d27"
 
 [desktop.appearanceDarkChromeTheme.fonts]
 ui = '"IoskeleyMonoTerm Nerd Font Mono"'

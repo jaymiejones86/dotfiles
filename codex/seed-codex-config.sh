@@ -13,6 +13,7 @@ script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 seed="$script_dir/config.seed.toml"
 target="$HOME/.codex/config.toml"
 dry_run=false
+check_drift=false
 
 usage() {
   cat <<'EOF'
@@ -24,6 +25,7 @@ Options:
   --seed PATH    Seed fragment (default: codex/config.seed.toml)
   --target PATH  Codex config file (default: ~/.codex/config.toml)
   --dry-run      Print what would be added without writing
+  --check-drift  Report seed keys whose local values differ (read-only)
   -h, --help     Show this help
 EOF
 }
@@ -47,6 +49,7 @@ while (($#)); do
       shift
       ;;
     --dry-run) dry_run=true ;;
+    --check-drift) check_drift=true ;;
     -h|--help)
       usage
       exit 0
@@ -69,19 +72,22 @@ if [[ ! -f $seed ]]; then
   exit 1
 fi
 
-if $dry_run; then
-  dry_flag=true
-else
-  dry_flag=false
+mode=seed
+if $check_drift; then
+  mode=check
+elif $dry_run; then
+  mode=dry-run
 fi
 
-python3 - "$seed" "$target" "$dry_flag" <<'PY'
+python3 - "$seed" "$target" "$mode" <<'PY'
 import os
 import re
 import sys
 import tomllib
 
-seed_path, target_path, dry_run = sys.argv[1], sys.argv[2], sys.argv[3] == "true"
+seed_path, target_path, mode = sys.argv[1], sys.argv[2], sys.argv[3]
+dry_run = mode == "dry-run"
+check = mode == "check"
 
 try:
     with open(seed_path, "rb") as handle:
@@ -148,6 +154,20 @@ def dotted(path, key):
     return ".".join([*path, key])
 
 
+def values_equal(first, second):
+    if type(first) is not type(second):
+        return False
+    if isinstance(first, list):
+        return len(first) == len(second) and all(
+            values_equal(a, b) for a, b in zip(first, second)
+        )
+    if isinstance(first, dict):
+        return set(first) == set(second) and all(
+            values_equal(first[key], second[key]) for key in first
+        )
+    return first == second
+
+
 leaves = []
 
 
@@ -162,7 +182,8 @@ def walk(node, path):
 walk(seed, ())
 
 missing = []
-present = 0
+matching = 0
+drifted = []
 skipped = []
 for table, key, value in leaves:
     node = current
@@ -179,9 +200,30 @@ for table, key, value in leaves:
         skipped.append(dotted(table, key))
         continue
     if isinstance(node, dict) and key in node:
-        present += 1
+        if values_equal(value, node[key]):
+            matching += 1
+        else:
+            drifted.append((dotted(table, key), value, node[key]))
     else:
         missing.append((table, key, value))
+
+if check:
+    for path, seed_value, local_value in drifted:
+        print(
+            f"drift: {path} seed={fmt_value(seed_value)} "
+            f"local={fmt_value(local_value)}"
+        )
+    for table, key, value in missing:
+        print(f"missing: {dotted(table, key)} (seed={fmt_value(value)})")
+    for path in skipped:
+        print(f"skip: type conflict, left unchanged: {path}")
+    print(
+        f"\nDrift check: {matching} matching, {len(drifted)} drifted, "
+        f"{len(missing)} missing, {len(skipped)} skipped."
+    )
+    if not exists:
+        print(f"note: target does not exist: {target_path}")
+    sys.exit(1 if (drifted or not exists) else 0)
 
 grouped = {}
 order = []
@@ -231,7 +273,7 @@ for path in skipped:
 if dry_run:
     print(
         f"\nDry run: {len(added)} key(s) would be added, "
-        f"{present} already present, {len(skipped)} skipped."
+        f"{matching} already present, {len(skipped)} skipped."
     )
     sys.exit(0)
 
@@ -249,8 +291,8 @@ if not exists:
 elif added:
     print(
         f"\nSeeded {len(added)} key(s) into {target_path} "
-        f"({present} already present, {len(skipped)} skipped)."
+        f"({matching} already present, {len(skipped)} skipped)."
     )
 else:
-    print(f"unchanged: {target_path} already contains all {present} seed key(s).")
+    print(f"unchanged: {target_path} already contains all {matching} seed key(s).")
 PY
