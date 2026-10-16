@@ -84,8 +84,9 @@ already exists as an unmanaged file, directory, or link is reported as a
 conflict and is never overwritten. Review that copy before moving or removing
 it, then rerun `./install.sh`.
 
-The tracked inventory contains the personal `archify`, `ast-grep`, `design-taste-frontend`,
-`diagnose`, `grill-me`, `hallmark`, `handoff`, `hatch-pet`, `project-bootstrap`, `to-prd`,
+The tracked inventory contains the personal `archify`, `ast-grep`, `blast-radius`,
+`design-taste-frontend`, `diagnose`, `grill-me`, `hallmark`, `handoff`, `hatch-pet`,
+`project-bootstrap`, `tdd`, `technical-writing`, `to-prd`, `unslop`,
 and `write-a-skill` skills. Work-specific `ci-results` remains a local link to
 its original source and is not copied into this public repository. The
 Claude-provided `frontend-design` skill also remains in its original location
