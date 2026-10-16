@@ -8,6 +8,8 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 - Inspect the actual repository, Git state, code, tests, configuration, runtime, and any named issue or reference. Do not substitute conventions, filenames, generated artifacts, old notes, or guesses for current evidence.
 - Use implementation and runtime for present behavior; use declared PRDs, designs, decisions, and runbooks for intended behavior unless the user changes direction.
 - Prefer discovering answers from available context. Ask only when a missing choice would materially change the result or risk.
+- If the answer is observable by running code, inspecting runtime, measuring, or sketching output, prototype or measure instead of asking. Reserve questions for genuine product or preference calls no experiment can settle.
+- Proceed with reversible work and present the result for course-correction. Always pause for irreversible writes: force-push to shared branches, deploys, data deletion, and customer messages. Decline or push back when an approach does not earn its place; agreement is not the default.
 - Distinguish answering, researching, reviewing, planning, diagnosing, implementing, committing, pushing, deploying, and external writes. Research, review, planning, and diagnosis do not authorize changes. Implementation authorizes necessary local edits and safe verification, but not later lifecycle actions unless requested or required by project instructions.
 - Do not expand scope silently. Respect milestones, review stops, release boundaries, and “do not implement yet.” Record follow-up work separately.
 - Verify time-sensitive or high-stakes facts with current authoritative sources. Separate facts, evidence, and inference.
@@ -39,6 +41,21 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 5. Inspect the final diff, including untracked files, and perform only requested lifecycle actions such as commit, push, deploy, or external updates.
 
 - Avoid speculative abstractions, opportunistic refactors, new services, and production dependencies unless necessary. Explain material additions first.
+
+### Design discipline
+
+- Name the data shape first for any code change. Encode branching or repeated shape assumptions in an explicit structure (state machine, typed model, table or registry, reducer, boundary) instead of scattered conditionals.
+- Place validation, error handling, and framework adapters at system boundaries. Trust internal types and keep business logic pure. Make illegal states unrepresentable.
+- For code crossing a function boundary, explore competing designs in parallel before implementing. For novel interactions or architecture with no precedent, build 2-3 prototypes and compare before committing.
+- Bias to deletion and the smallest change that solves the problem. Remove dead weight before adding. Count layers and hidden state; collapse one-caller wrappers and shrink mutable scope.
+
+### Execution discipline
+
+- Break multi-step work into small units that each end in a check. Verify each before starting the next, and order delivery so the sequence proves itself.
+- Trace each symptom back to the first place the system went wrong and fix it there. If two fixes share one premise, write the premise down and test it directly before writing another fix that assumes it. A guard is a fix only when the handled state is legitimate.
+- Assert observable behavior in tests so the test fails when behavior breaks and keeps passing when only internals change.
+- Make commands, lifecycle steps, and loops idempotent amid crashes and retries. Migrate callers then delete legacy APIs in one wave. Eliminate shared mutable state before serializing concurrent writers.
+- When the same instruction is needed a second time, encode it as a lint, metadata flag, runtime check, or script instead of more text.
 
 ## Verification
 
