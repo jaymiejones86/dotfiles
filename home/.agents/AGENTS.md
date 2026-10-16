@@ -19,7 +19,7 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 ### Repository baseline
 
 - Every maintained repository must contain a concise, product-specific `AGENTS.md`, a `CODING_STANDARDS.md`, and a decision registry. Use `docs/decisions/README.md` for new repositories; an existing canonical registry may retain its established path when `AGENTS.md` links it explicitly.
-- Create any missing baseline file before implementation. Keep repository guidance specific to the product, architecture, supported commands, invariants, and release boundaries; link to detailed runbooks instead of copying framework manuals.
+- Create any missing baseline file before implementation. Use the `project-bootstrap` skill when creating a repository baseline. Keep repository guidance specific to the product, architecture, supported commands, invariants, and release boundaries; link to detailed runbooks instead of copying framework manuals.
 - Every application (web or native) must create and maintain the ability to seed the application with test data for local development purposes that is locked to development environments.
 - Every application (web or native) that requires a logged in user, requires at least one admin user which is documented in the README file, which includes the email and or username, password and OTP script (if applicable). When there are multiple roles or requires multiple users, users must be created for those roles.
 - Keep `CODING_STANDARDS.md` grounded in the repository's actual language, tooling, architecture, and tests. It must reference the canonical verification entrypoint and distinguish automated checks from device, browser, external-service, staging, or production evidence.
@@ -60,8 +60,8 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 ## Verification
 
 - Use commands supported by the repository. Do not invent test, build, seed, or deployment commands.
-- Start with focused tests, then run applicable formatting, lint or static analysis, warnings-as-errors or type checks, broader tests, asset builds, and packaging checks proportional to the change.
-- Read documentation changes in their final form and check the diff.
+- Start with focused tests, then run applicable formatting, lint or static analysis, warnings-as-errors or type checks, broader tests, asset builds, and packaging checks proportional to the change. Use the `diagnose` skill for hard bugs, `tdd` when the fix has a cheap test target, and `blast-radius` when a small diff needs a breakage check.
+- Read documentation changes in their final form and check the diff. Apply the `technical-writing` and `unslop` skills to user-visible prose.
 - For user-visible behavior changes, update the relevant documentation and record release-note context using the repository's established changelog or release workflow.
 - Verify UI work through the real entry point when available, including meaningful flows, representative viewports, and applicable accessibility. A screenshot alone is not runtime proof.
 - For security, migration, import, AI, and job work, verify relevant denial, isolation, validation, idempotency, redaction, and failure behavior. Use labelled isolated fixtures; deterministic fixtures do not prove live or production acceptance.
@@ -70,46 +70,10 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 
 ## Performance
 
-- Review performance before an authorized release, during performance diagnosis,
-  and when changing queries, large collections, media delivery, third-party
-  scripts, or expensive request-path work. Scale the review to the affected
-  flows; routine documentation-only changes are exempt. Use the existing
-  architecture and verification tools.
-- Measure representative flows with realistic data and constrained devices
-  or networks. For websites, check initial loading, interaction responsiveness,
-  and layout stability. For applications, also check query count and duration,
-  payload size, and time until actions provide useful feedback. Compare before
-  and after under comparable conditions; distinguish emulation, local checks,
-  and live-device or production evidence. If a baseline is unavailable, say so.
-- Optimize delivered media, fonts, scripts, and optional UI without changing
-  accepted branding, original assets, private-storage boundaries, or workflows.
-  Prioritize initial content and avoid unnecessary transfer or layout shifts.
-- Bound queries, collections, payloads, and concurrency. Investigate N+1
-  queries and justify indexes using actual query patterns, existing indexes,
-  and query plans with representative data. Consider write and storage overhead
-  and migration locking. Run execution-based analysis only where its execution
-  and load are safe and authorized.
-- Keep interactions responsive. Use existing async and background-job
-  mechanisms appropriately, with clear pending, failure, and retry states.
-  Preserve edits, focus, scroll, and explicit acceptance.
-- For Phoenix LiveView, check initial HTTP rendering, connected mount, event
-  handling, and reconnect behavior. Avoid unnecessary repeated work, blocking
-  operations, and unbounded assigns or rendered collections. Verify that patches
-  preserve unsaved input, focus, and scroll.
-- Define cache scope, keys, expiry, and invalidation, accounting for relevant
-  account, user, permission, and input boundaries. Verify isolation and never
-  allow cached private data to cross user or tenant boundaries. Never put
-  private responses or signed asset URLs into public caches.
-- During review, report findings without changing implementation. When
-  implementation is authorized, fix applicable issues within scope and verify
-  each meaningful change. Record broader architecture, infrastructure, or
-  product changes separately without expanding release authorization.
-- Keep provider recipes, numeric performance budgets, supported audit commands,
-  important flows, and device profiles in project guidance. Use delegation when
-  useful and available, and consolidate findings before implementing fixes.
-- Report tested flows, environment, before/after evidence, remaining issues,
-  justified exemptions, and unavailable evidence. A good Lighthouse score alone
-  does not prove application responsiveness or physical-device acceptance.
+- Review performance before an authorized release, during performance diagnosis, and when changing queries, large collections, media delivery, third-party scripts, or expensive request-path work. Routine documentation-only changes are exempt.
+- Measure representative flows with realistic data and compare before and after under comparable conditions. If a baseline is unavailable, say so.
+- Use the `performance-review` skill for the full checklist (measurement, queries, media, responsiveness, caching, LiveView). Keep provider recipes, budgets, and audit commands in project guidance.
+- Report tested flows, environment, before/after evidence, remaining issues, and unavailable evidence.
 
 ## Git and workspace safety
 
@@ -130,7 +94,7 @@ These are defaults for every project. Closer `AGENTS.md` files may refine them.
 
 ## Documentation and closeout
 
-- Keep operational documentation copy-pasteable and repository-grounded, with prerequisites, environment differences, verification, troubleshooting, and recovery where relevant.
-- Use repository `AGENTS.md` files for durable project sources, commands, invariants, design rules, deployment boundaries, and done criteria.
+- Keep operational documentation copy-pasteable and repository-grounded, with prerequisites, environment differences, verification, troubleshooting, and recovery where relevant. Apply the `technical-writing` and `unslop` skills to user-visible docs.
+- Use repository `AGENTS.md` files for durable project sources, commands, invariants, design rules, deployment boundaries, and done criteria. Use the `handoff` skill when continuing work in a fresh session.
 - Lead the final response with the outcome. State what changed or was determined, what was verified, and any exact blocker or remaining risk.
 - Include relevant test, runtime, Git, deployment, and unverified status. Do not claim completion from a compile, local package, clean backlog, or commit alone when the outcome requires more.
