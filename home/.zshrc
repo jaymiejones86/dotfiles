@@ -69,6 +69,11 @@ alias ber="bundle exec rspec spec"
 alias sroutes="bundle exec rails routes | fzf"
 alias installruby="CC=/usr/bin/gcc ruby-install ruby"
 
+#------------------------------------------------------------------------------
+# Assistants
+#------------------------------------------------------------------------------
+alias claude-personal='open -n -a "Claude" --args --user-data-dir="$HOME/Library/Application Support/Claude-Personal"'
+
 # Tree options
 function _t() {
   # Defaults to 3 levels deep, do more with `t 5` or `t 1`
