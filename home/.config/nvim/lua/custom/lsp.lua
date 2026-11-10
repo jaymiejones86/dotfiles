@@ -1,8 +1,6 @@
 -- Custom LSP configurations
 -- These are extracted from init.lua to keep customizations separate from base config
 
-local lspconfig = require('lspconfig')
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local ok_cmp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if ok_cmp then
@@ -33,20 +31,16 @@ local function on_attach(client, bufnr)
 end
 
 local function setup(server_name, config)
-  if not lspconfig[server_name] then
+  if vim.lsp.config[server_name] == nil then
     return
   end
 
-  -- mason-lspconfig can auto-enable servers before this custom setup runs.
-  -- Disable that default client so only the explicit custom config attaches.
-  if vim.lsp.enable then
-    pcall(vim.lsp.enable, server_name, false)
-  end
-
-  lspconfig[server_name].setup(vim.tbl_deep_extend('force', {
+  vim.lsp.config(server_name, vim.tbl_deep_extend('force', {
     capabilities = capabilities,
     on_attach = on_attach,
   }, config or {}))
+
+  vim.lsp.enable(server_name)
 end
 
 local function ignore_ruby_lsp_rails_init_warning(err, result, ctx, config)
@@ -108,13 +102,13 @@ if elixir_ls_cmd then
   }
 end
 
-local ruby_lsp_cmd = mason_package_executable('ruby-lsp', 'bin/ruby-lsp')
+local ruby_lsp_cmd = mason_package_executable('ruby-lsp', 'ruby-lsp')
 if not ruby_lsp_cmd and vim.fn.executable('ruby-lsp') == 1 then
   ruby_lsp_cmd = 'ruby-lsp'
 end
 
 -- Prefer the current Ruby LSP, but only configure servers with available commands.
-if lspconfig.ruby_lsp and ruby_lsp_cmd then
+if vim.lsp.config.ruby_lsp and ruby_lsp_cmd then
   servers.ruby_lsp = {
     cmd = { ruby_lsp_cmd },
     init_options = {
@@ -134,9 +128,9 @@ elseif vim.fn.executable('solargraph') == 1 then
   }
 end
 
-if lspconfig.ts_ls then
+if vim.lsp.config.ts_ls then
   servers.ts_ls = {}
-elseif lspconfig.tsserver then
+elseif vim.lsp.config.tsserver then
   servers.tsserver = {}
 end
 
@@ -149,12 +143,13 @@ if ok_mason_lspconfig then
   if not servers.elixirls then
     table.insert(ensure_installed, 'elixirls')
   end
-  if lspconfig.ruby_lsp and not servers.ruby_lsp then
+  if vim.lsp.config.ruby_lsp and not servers.ruby_lsp then
     table.insert(ensure_installed, 'ruby_lsp')
   end
 
   mason_lspconfig.setup {
     ensure_installed = ensure_installed,
+    automatic_enable = false,
   }
 end
 
@@ -165,6 +160,7 @@ end
 -- Additional custom LSP configurations can be added here
 -- Example structure for adding more language servers:
 --
--- require('lspconfig').your_language_server.setup {
+-- vim.lsp.config('your_language_server', {
 --   -- your configuration here
--- }
+-- })
+-- vim.lsp.enable('your_language_server')
