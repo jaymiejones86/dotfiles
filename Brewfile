@@ -57,6 +57,7 @@ brew "claude-squad"
 brew "sst/tap/opencode"
 brew "felixkratz/formulae/sketchybar"
 brew "alexsjones/llmfit/llmfit"
+brew "orbstack"
 
 cask "ghostty"
 cask "alacritty"
