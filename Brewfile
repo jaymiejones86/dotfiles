@@ -58,6 +58,7 @@ brew "sst/tap/opencode"
 brew "felixkratz/formulae/sketchybar"
 brew "alexsjones/llmfit/llmfit"
 brew "orbstack"
+brew "Ducksss/tap/codex-profile"
 
 cask "ghostty"
 cask "alacritty"
